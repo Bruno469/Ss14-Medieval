@@ -10,3 +10,9 @@ department-Silicon = Silicon
 department-Specific = Station specific
 
 department-Unknown = Unknown
+
+#Andromeda
+
+department-Kingsguard = Guarda Real
+department-Royalty = Realeza
+department-Clergy = Clero
