@@ -16,3 +16,5 @@ department-Unknown = Unknown
 department-Kingsguard = Guarda Real
 department-Royalty = Realeza
 department-Clergy = Clero
+department-Market = Mercado
+department-Civil = Civil

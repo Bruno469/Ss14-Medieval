@@ -131,3 +131,7 @@ job-name-hand = Mão
 job-name-lck = Lorde Comandante da Guarda Real
 job-name-kingguard = Guarda
 job-name-nun = Freira
+job-name-alchemist = Alquimista
+job-name-treasurer = Lorde Tesoureiro
+job-name-knight = Cavaleiro
+job-name-executioner = Carrasco

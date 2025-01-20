@@ -56,3 +56,7 @@ job-description-bishop = Papel de Bispo
 job-description-lck = Simplesmente hos
 job-description-kingguard = Guarda, Guarda, Guarda
 job-description-nun = FREIRA!!
+job-description-alchemist = Alquimista!!!
+job-description-treasurer = Aceitas uma venda?
+job-description-knight = Espada e escudo
+job-description-executioner = Execute. Mate aqueles que o povo apontar.

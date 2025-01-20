@@ -18,13 +18,31 @@
   roles:
     - LordCommanderOfTheKingsguard
     - Guard
+    - Knight
 
 - type: department
   id: Clergy
   description: department-clergy-description
   color: "#701442"
-  weight: 199
+  weight: 198
   roles:
     - Bishop
     - Chaplain
     - Nun
+    - Alchemist
+
+- type: department
+  id: Market
+  description: department-market-description
+  color: "#701442"
+  weight: 197
+  roles:
+    - Treasurer
+
+- type: department
+  id: Civil
+  description: department-civil-description
+  color: "#701442"
+  weight: 197
+  roles:
+    - Executioner

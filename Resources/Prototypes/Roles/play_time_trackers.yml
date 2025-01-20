@@ -168,3 +168,11 @@
   id: JobGuard
 - type: playTimeTracker
   id: JobNun
+- type: playTimeTracker
+  id: JobAlchemist
+- type: playTimeTracker
+  id: JobTreasurer
+- type: playTimeTracker
+  id: JobKnight
+- type: playTimeTracker
+  id: JobExecutioner
