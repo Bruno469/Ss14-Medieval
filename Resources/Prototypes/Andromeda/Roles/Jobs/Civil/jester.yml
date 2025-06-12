@@ -2,7 +2,7 @@
   id: Jester
   name: job-name-jester
   description: job-description-jester
-  playTimeTracker: JobClown
+  playTimeTracker: JobJester
   startingGear: ClownGear
   icon: "JobIconClown"
   supervisors: job-supervisors-hop

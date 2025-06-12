@@ -2,7 +2,7 @@
   id: Bard
   name: job-name-bard
   description: job-description-bard
-  playTimeTracker: JobMusician
+  playTimeTracker: JobBard
   startingGear: MusicianGear
   icon: "JobIconMusician"
   supervisors: job-supervisors-hire

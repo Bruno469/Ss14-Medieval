@@ -2,11 +2,7 @@
   id: Tavernkeeper
   name: job-name-tavernkeeper
   description: job-description-tavernkeeper
-  playTimeTracker: JobBartender
-  requirements:
-    - !type:CharacterDepartmentTimeRequirement
-      department: Civilian
-      min: 3600 #DeltaV
+  playTimeTracker: JobTavernkeeper
   startingGear: BartenderGear
   icon: "JobIconBartender"
   supervisors: job-supervisors-hop

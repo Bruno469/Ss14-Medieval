@@ -13,8 +13,8 @@ department-Unknown = Unknown
 
 #Andromeda
 
-department-Kingsguard = Guarda Real
-department-Royalty = Realeza
+department-Kingsguard = Guarda
+department-Royalty = Nobreza
 department-Clergy = Clero
 department-Market = Mercado
 department-Civil = Civil

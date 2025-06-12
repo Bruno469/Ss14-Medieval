@@ -1,28 +1,31 @@
 - type: department
   id: Royalty
+  name: department-Royalty
   description: department-royalty-description
   color: "#701442"
   weight: 200
   roles:
-    - King
-    - Queen
+    - Baron
+    - Baroness
     - Bishop
-    - LordCommanderOfTheKingsguard
+    - LordCommanderOfTheGuard
     - Hand
 
 - type: department
   id: Kingsguard
+  name: department-Kingsguard
   description: department-kingsguard-description
   color: "#701442"
   weight: 199
   roles:
-    - LordCommanderOfTheKingsguard
+    - LordCommanderOfTheGuard
     - Guard
     - Knight
     - WardenMD
 
 - type: department
   id: Clergy
+  name: department-Clergy
   description: department-clergy-description
   color: "#701442"
   weight: 198
@@ -35,6 +38,7 @@
 
 - type: department
   id: Market
+  name: department-Market
   description: department-market-description
   color: "#701442"
   weight: 197
@@ -45,6 +49,7 @@
 
 - type: department
   id: Civil
+  name: department-Civil
   description: department-civil-description
   color: "#701442"
   weight: 197
@@ -52,6 +57,6 @@
     - Executioner
     - ChefMD
     - Jester
-    - TavernKeeper
+    - Tavernkeeper
     - Bard
     - Maid

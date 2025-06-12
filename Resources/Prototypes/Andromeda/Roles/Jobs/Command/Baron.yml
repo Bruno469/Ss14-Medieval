@@ -1,7 +1,7 @@
 - type: job
   id: Baron
-  name: job-name-king
-  description: job-description-king
+  name: job-name-baron
+  description: job-description-baron
   playTimeTracker: JobKing
   weight: 20
   startingGear: CaptainGear
@@ -23,7 +23,7 @@
   id: CaptainGear
   equipment:
     jumpsuit: ClothingUniformJumpsuitCaptain
-    back: ClothingBackpackCaptainFilled
+    back: ClothingBackpackCaptain
     shoes: ClothingShoesBootsLaceup
     id: CaptainPDA
     ears: ClothingHeadsetAltCommand

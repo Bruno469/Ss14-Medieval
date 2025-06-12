@@ -2,7 +2,7 @@
   id: LordCommanderOfTheGuard
   name: job-name-lcg
   description: job-description-lcg
-  playTimeTracker: JobLordCommanderOfTheKingsguard
+  playTimeTracker: JobLCG
   weight: 10
   startingGear: HoSGear
   icon: "JobIconHeadOfSecurity"

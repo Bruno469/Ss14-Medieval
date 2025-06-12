@@ -163,7 +163,7 @@
 - type: playTimeTracker
   id: JobHand
 - type: playTimeTracker
-  id: JobLordCommanderOfTheKingsguard
+  id: JobLCG
 - type: playTimeTracker
   id: JobGuard
 - type: playTimeTracker
@@ -180,3 +180,17 @@
   id: JobInquisitor
 - type: playTimeTracker
   id: JobMaid
+- type: playTimeTracker
+  id: JobJester
+- type: playTimeTracker
+  id: JobBard
+- type: playTimeTracker
+  id: JobChefMD
+- type: playTimeTracker
+  id: JobTavernkeeper
+- type: playTimeTracker
+  id: JobCarrier
+- type: playTimeTracker
+  id: JobMiner
+- type: playTimeTracker
+  id: JobWardenMD

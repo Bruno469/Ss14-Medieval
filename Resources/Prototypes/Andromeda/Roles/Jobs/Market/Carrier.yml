@@ -2,7 +2,7 @@
   id: Carrier
   name: job-name-carrier
   description: job-description-carrier
-  playTimeTracker: JobCargoTechnician
+  playTimeTracker: JobCarrier
   startingGear: CargoTechGear
   icon: "JobIconCargoTechnician"
   supervisors: job-supervisors-qm
