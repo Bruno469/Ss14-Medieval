@@ -1,0 +1,16 @@
+- type: job
+  id: Maid
+  name: job-name-maid
+  description: job-description-maid
+  playTimeTracker: JobMaid
+  startingGear: JanitorMaidGear
+  icon: "JobIconJanitor"
+  supervisors: job-supervisors-hop
+  access:
+    - Service
+    - Janitor
+    - Maintenance
+  special:
+    - !type:GiveItemOnHolidaySpecial
+      holiday: GarbageDay
+      prototype: WeaponRevolverInspector

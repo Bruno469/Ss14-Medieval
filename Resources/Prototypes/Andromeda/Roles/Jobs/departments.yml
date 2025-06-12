@@ -19,6 +19,7 @@
     - LordCommanderOfTheKingsguard
     - Guard
     - Knight
+    - WardenMD
 
 - type: department
   id: Clergy
@@ -29,6 +30,7 @@
     - Bishop
     - Chaplain
     - Nun
+    - Inquisitor
     - Alchemist
 
 - type: department
@@ -38,6 +40,8 @@
   weight: 197
   roles:
     - Treasurer
+    - Miner
+    - Carrier
 
 - type: department
   id: Civil
@@ -46,3 +50,8 @@
   weight: 197
   roles:
     - Executioner
+    - ChefMD
+    - Jester
+    - TavernKeeper
+    - Bard
+    - Maid

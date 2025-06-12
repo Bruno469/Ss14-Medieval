@@ -49,14 +49,20 @@ job-description-warden = Patrol the security department, ensure that no one is s
 job-description-zookeeper = Put on a joyful display of cute animals and space carps for all the crew to see. Currently available on Oasis.
 
 #Andromeda
-job-description-king = Rei
-job-description-queen = Rainha
-job-description-hand = Mão
+job-description-baron = Barão
+job-description-baroness = Baronesa
+job-description-hand = Mão direita
 job-description-bishop = Papel de Bispo
-job-description-lck = Simplesmente hos
-job-description-kingguard = Guarda, Guarda, Guarda
+job-description-lcg = Simplesmente hos
+job-description-guard = Guarda, Guarda, Guarda
 job-description-nun = FREIRA!!
 job-description-alchemist = Alquimista!!!
 job-description-treasurer = Aceitas uma venda?
 job-description-knight = Espada e escudo
 job-description-executioner = Execute. Mate aqueles que o povo apontar.
+job-description-jester = Hahaha Piadas
+job-description-bard = Cante e dance musicas 1050 anos na sua frente.
+job-description-tavernkeeper = Bebidas!!!
+job-description-inquisitor = Procure bruxas!
+job-description-carrier = Transporte coisas
+job-description-miner = OURO OURO!!

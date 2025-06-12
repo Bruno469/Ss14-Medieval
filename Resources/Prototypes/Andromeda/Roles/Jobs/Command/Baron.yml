@@ -1,5 +1,5 @@
 - type: job
-  id: King
+  id: Baron
   name: job-name-king
   description: job-description-king
   playTimeTracker: JobKing

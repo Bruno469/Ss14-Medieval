@@ -1,7 +1,7 @@
 - type: job
-  id: LordCommanderOfTheKingsguard
-  name: job-name-lck
-  description: job-description-lck
+  id: LordCommanderOfTheGuard
+  name: job-name-lcg
+  description: job-description-lcg
   playTimeTracker: JobLordCommanderOfTheKingsguard
   weight: 10
   startingGear: HoSGear

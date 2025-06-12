@@ -1,7 +1,7 @@
 - type: job
   id: Guard
-  name: job-name-kingguard
-  description: job-description-kingguard
+  name: job-name-guard
+  description: job-description-guard
   playTimeTracker: JobGuard
   startingGear: SecurityOfficerGear
   icon: "JobIconSecurityOfficer"
