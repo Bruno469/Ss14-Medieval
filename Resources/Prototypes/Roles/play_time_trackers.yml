@@ -194,3 +194,7 @@
   id: JobMiner
 - type: playTimeTracker
   id: JobWardenMD
+- type: playTimeTracker
+  id: JobMD
+- type: playTimeTracker
+  id: JobWizard

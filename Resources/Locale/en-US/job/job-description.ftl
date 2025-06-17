@@ -66,3 +66,7 @@ job-description-tavernkeeper = Bebidas!!!
 job-description-inquisitor = Procure bruxas!
 job-description-carrier = Transporte coisas
 job-description-miner = OURO OURO!!
+job-description-maid = Limpa limpa
+job-description-peasant = Seja agredido sem motivo por pessoas da nobreza
+job-description-md = CONTEMPLEM O MAGOOOO
+job-description-wizard = Aprendendo a ser alguém

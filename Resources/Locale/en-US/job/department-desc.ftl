@@ -10,4 +10,4 @@ department-Silicon-description = Obey your laws and serve the crew.
 department-Specific-description = Jobs that not all stations have.
 
 #Andromeda
-department-royalty-description = Nobreza.
+department-council-description = Conselho.
