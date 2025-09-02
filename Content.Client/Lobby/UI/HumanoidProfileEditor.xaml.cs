@@ -192,6 +192,16 @@ namespace Content.Client.Lobby.UI
 
             #endregion Name
 
+            #region Surname
+
+            SurnameEdit.OnTextChanged += args => {
+                if (!string.IsNullOrEmpty(args.Text))
+                    SetSurname(args.Text);
+            };
+            SurnameEdit.IsValid = args => args.Length <= _maxNameLength;
+
+            #endregion Surname
+
             #region Appearance
 
             TabContainer.SetTabTitle(0, Loc.GetString("humanoid-profile-editor-appearance-tab"));
@@ -832,6 +842,7 @@ namespace Content.Client.Lobby.UI
             UpdateHairPickers();
             UpdateCMarkingsHair();
             UpdateCMarkingsFacialHair();
+            UpdateSurnameEdit();
 
             // Begin CD - Character Records
             UpdateHeightControls();
@@ -1334,6 +1345,17 @@ namespace Content.Client.Lobby.UI
         }
         // End CD - Character Records
 
+        private void SetSurname(string newSurname)
+        {
+            Profile = Profile?.WithSurname(newSurname);
+            SetDirty();
+
+            if (!IsDirty)
+                return;
+
+        }
+
+
         private void SetSpawnPriority(SpawnPriorityPreference newSpawnPriority)
         {
             Profile = Profile?.WithSpawnPriorityPreference(newSpawnPriority);
@@ -1357,6 +1379,12 @@ namespace Content.Client.Lobby.UI
         {
             NameEdit.Text = Profile?.Name ?? "";
         }
+
+        private void UpdateSurnameEdit()
+        {
+            SurnameEdit.Text = Profile?.Surname ?? "";
+        }
+
 
         private void UpdateFlavorTextEdit()
         {

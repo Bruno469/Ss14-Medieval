@@ -927,6 +927,11 @@ namespace Content.Server.Database.Migrations.Sqlite
                         .HasColumnType("TEXT")
                         .HasColumnName("species");
 
+                    b.Property<string>("Surname")
+                        .IsRequired()
+                        .HasColumnType("TEXT")
+                        .HasColumnName("surname");
+
                     b.HasKey("Id")
                         .HasName("PK_profile");
 

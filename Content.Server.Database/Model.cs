@@ -440,6 +440,8 @@ namespace Content.Server.Database
         public Preference Preference { get; set; } = null!;
 
         public CDModel.CDProfile? CDProfile { get; set; } // CD - Character Records
+
+        public string Surname { get; set; } = null!;
     }
 
     public class Job
