@@ -136,7 +136,7 @@ public sealed class StationSpawningSystem : SharedStationSpawningSystem
         if (profile != null)
         {
             _humanoidSystem.LoadProfile(entity.Value, profile);
-            _metaSystem.SetEntityName(entity.Value, profile.Name);
+            _metaSystem.SetEntityName(entity.Value, profile.Name + " " + profile.Surname);
 
             if (profile.FlavorText != "" && _configurationManager.GetCVar(CCVars.FlavorText))
             {
