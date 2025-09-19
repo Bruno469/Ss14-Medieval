@@ -1,8 +1,11 @@
 using Content.Shared.Damage;
 using Content.Shared.Damage.Prototypes;
+using Content.Shared.Popups;
 using Robust.Shared.Audio;
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.Containers;
+using Robust.Shared.Random;
+using Robust.Shared.Timing;
 
 namespace Content.Shared.Blocking;
 
@@ -10,11 +13,15 @@ public sealed partial class BlockingSystem
 {
     [Dependency] private readonly DamageableSystem _damageable = default!;
     [Dependency] private readonly SharedAudioSystem _audio = default!;
+    [Dependency] private readonly IGameTiming _timing = default!;
+    [Dependency] private readonly IRobustRandom _random = default!;
+    [Dependency] private readonly SharedPopupSystem _popup = default!;
 
     private void InitializeUser()
     {
         SubscribeLocalEvent<BlockingUserComponent, DamageModifyEvent>(OnUserDamageModified);
         SubscribeLocalEvent<BlockingComponent, DamageModifyEvent>(OnDamageModified);
+        SubscribeLocalEvent<BlockingUserComponent,  TryChangePartDamageEvent>(OnUserPartDamageModified);
 
         SubscribeLocalEvent<BlockingUserComponent, EntParentChangedMessage>(OnParentChanged);
         SubscribeLocalEvent<BlockingUserComponent, ContainerGettingInsertedAttemptEvent>(OnInsertAttempt);
@@ -50,10 +57,18 @@ public sealed partial class BlockingSystem
             // A shield should only block damage it can itself absorb. To determine that we need the Damageable component on it.
             if (!TryComp<DamageableComponent>(component.BlockingItem, out var dmgComp))
                 return;
+            var rand = new System.Random((int)_timing.CurTick.Value);
+            var roll = rand.NextFloat(0, 1);
 
             var blockFraction = blocking.IsBlocking ? blocking.ActiveBlockFraction : blocking.PassiveBlockFraction;
             blockFraction = Math.Clamp(blockFraction, 0, 1);
-            _damageable.TryChangeDamage(component.BlockingItem, blockFraction * args.OriginalDamage);
+            if (roll < 0.9f)
+            {
+                _popup.PopupPredicted(Loc.GetString("test-block"), uid, args.Origin, PopupType.Large);
+                _damageable.TryChangeDamage(component.BlockingItem, blockFraction * args.OriginalDamage);
+                blockFraction = 1;
+                //args.
+            }
 
             var modify = new DamageModifierSet();
             foreach (var key in dmgComp.Damage.DamageDict.Keys)
@@ -88,6 +103,11 @@ public sealed partial class BlockingSystem
 
         StopBlockingHelper(component.BlockingItem.Value, blockingComponent, uid);
 
+    }
+
+    private void OnUserPartDamageModified(EntityUid uid, BlockingUserComponent component, TryChangePartDamageEvent args)
+    {
+        args.Evaded = true;
     }
 
     /// <summary>
