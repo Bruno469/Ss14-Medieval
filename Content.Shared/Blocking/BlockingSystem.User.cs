@@ -107,6 +107,7 @@ public sealed partial class BlockingSystem
 
     private void OnUserPartDamageModified(EntityUid uid, BlockingUserComponent component, TryChangePartDamageEvent args)
     {
+        Logger.Info("Teste Evaded");
         args.Evaded = true;
     }
 
