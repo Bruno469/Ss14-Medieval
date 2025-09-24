@@ -21,7 +21,6 @@ public sealed partial class BlockingSystem
     {
         SubscribeLocalEvent<BlockingUserComponent, DamageModifyEvent>(OnUserDamageModified);
         SubscribeLocalEvent<BlockingComponent, DamageModifyEvent>(OnDamageModified);
-        SubscribeLocalEvent<BlockingUserComponent,  TryChangePartDamageEvent>(OnUserPartDamageModified);
 
         SubscribeLocalEvent<BlockingUserComponent, EntParentChangedMessage>(OnParentChanged);
         SubscribeLocalEvent<BlockingUserComponent, ContainerGettingInsertedAttemptEvent>(OnInsertAttempt);
@@ -103,12 +102,6 @@ public sealed partial class BlockingSystem
 
         StopBlockingHelper(component.BlockingItem.Value, blockingComponent, uid);
 
-    }
-
-    private void OnUserPartDamageModified(EntityUid uid, BlockingUserComponent component, TryChangePartDamageEvent args)
-    {
-        Logger.Info("Teste Evaded");
-        args.Evaded = true;
     }
 
     /// <summary>
