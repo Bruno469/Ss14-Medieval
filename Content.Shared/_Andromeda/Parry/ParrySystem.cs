@@ -26,9 +26,14 @@ public sealed class ParrySystem : EntitySystem
     private void OnUseInHand(Entity<ParryComponent> ent, ref UseInHandEvent args)
     {
         //_audio.PlayPvs(ent.Comp.Sound, ent.Owner);
-        if (args.Handled)
+        if (args.Handled || HasComp<ParryUserComponent>(args.User))
+        {
+            Logger.Info("Handled");
             return;
-        ActiveParry(ent.Owner);
+        }
+
+
+        ActiveParry(args.User);
         Logger.Info("USADO");
         args.Handled = true;
     }
@@ -38,7 +43,6 @@ public sealed class ParrySystem : EntitySystem
 
         if (args.Damage.GetTotal() <= 0)
             return;
-
 
         if (!TryComp<DamageableComponent>(ent.Owner, out var dmgComp))
             return;
@@ -61,11 +65,6 @@ public sealed class ParrySystem : EntitySystem
 
     private void ActiveParry(EntityUid owner)
     {
-        if (HasComp<ParryUserComponent>(owner))
-        {
-            Logger.Error("Ja tem");
-            return;
-        }
 
         AddComp<ParryUserComponent>(owner);
         Logger.Info("Parry Ativo");
