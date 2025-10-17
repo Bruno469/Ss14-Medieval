@@ -21,6 +21,7 @@ using Robust.Shared.Timing;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
+using Content.Shared.Blocking;
 using Content.Shared.Inventory;
 
 // Namespace has set accessors, leaving it on the default.
@@ -108,6 +109,10 @@ public partial class SharedBodySystem
 
     private void OnTryChangePartDamage(Entity<BodyComponent> ent, ref TryChangePartDamageEvent args)
     {
+        if (TryComp<BlockingUserComponent>(ent.Owner, out var blockComp))
+        {
+            return;
+        }
         // If our target has a TargetingComponent, that means they will take limb damage
         // And if their attacker also has one, then we use that part.
         if (_queryTargeting.TryComp(ent, out var targetEnt))
