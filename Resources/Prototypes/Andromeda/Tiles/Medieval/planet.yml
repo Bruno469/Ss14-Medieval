@@ -1,0 +1,29 @@
+# Grass
+- type: tile
+  id: FloorMedievalDarkGrass
+  name: tiles-grass-Medieval-floor
+  sprite: /Textures/Andromeda/Tiles/Medieval/Dark_Grass/dark_grass.png
+  variants: 4
+  placementVariants:
+  - 1.0
+  - 1.0
+  - 1.0
+  - 1.0
+  edgeSpritePriority: 1
+  edgeSprites:
+    SouthEast: /Textures/Andromeda/Tiles/Medieval/Dark_Grass/single_edge.png
+    NorthEast: /Textures/Andromeda/Tiles/Medieval/Dark_Grass/single_edge.png
+    NorthWest: /Textures/Andromeda/Tiles/Medieval/Dark_Grass/single_edge.png
+    SouthWest: /Textures/Andromeda/Tiles/Medieval/Dark_Grass/single_edge.png
+    South: /Textures/Andromeda/Tiles/Medieval/Dark_Grass/double_edge.png
+    East: /Textures/Andromeda/Tiles/Medieval/Dark_Grass/double_edge.png
+    North: /Textures/Andromeda/Tiles/Medieval/Dark_Grass/double_edge.png
+    West: /Textures/Andromeda/Tiles/Medieval/Dark_Grass/double_edge.png
+  baseTurf: FloorPlanetDirt
+  isSubfloor: true
+  footstepSounds:
+    collection: FootstepGrass
+  itemDrop: FloorTileItemGrass
+  heatCapacity: 10000
+  weather: true
+  indestructible: true
