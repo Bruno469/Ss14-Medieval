@@ -32,7 +32,6 @@ public sealed class ParrySystem : EntitySystem
             return;
         }
 
-
         ActiveParry(args.User);
         Logger.Info("USADO");
         args.Handled = true;
@@ -65,7 +64,8 @@ public sealed class ParrySystem : EntitySystem
 
     private void ActiveParry(EntityUid owner)
     {
-
+        if (HasComp<ParryComponent>(owner))
+            return;
         AddComp<ParryUserComponent>(owner);
         Logger.Info("Parry Ativo");
     }
