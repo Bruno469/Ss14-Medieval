@@ -13,7 +13,7 @@ using Content.Shared.GameTicking;
 using Content.Shared.Psionics.Glimmer;
 using Content.Shared.Verbs;
 using Content.Shared.StatusEffect;
-using Content.Shared.Damage;
+using Content.Shared.Damage.Systems;
 using Content.Shared.Destructible;
 using Content.Shared.Construction.Components;
 using Content.Shared.Mind;
@@ -222,7 +222,7 @@ namespace Content.Server.Psionics.Glimmer
             var slope = (float) (11 - _glimmerSystem.Glimmer / 100);
             var maxIntensity = 20;
 
-            var removed = (float) _glimmerSystem.Glimmer * _random.NextFloat(0.1f, 0.15f);
+            var removed = (float) _glimmerSystem.Glimmer * _random.NextFloat(0.06f, 0.08f);
             _glimmerSystem.Glimmer -= (int) removed;
             BeamRandomNearProber(uid, _glimmerSystem.Glimmer / 350, _glimmerSystem.Glimmer / 50);
             _explosionSystem.QueueExplosion(uid, "Default", totalIntensity, slope, maxIntensity);

@@ -9,7 +9,7 @@ namespace Content.Shared.Warps;
 [RegisterComponent, NetworkedComponent]
 public sealed partial class WarpPointComponent : Component
 {
-    [ViewVariables(VVAccess.ReadWrite), DataField]
+    [DataField]
     public string? Location;
 
     // Unique (across all loaded maps) identifier for teleporting to warp points.

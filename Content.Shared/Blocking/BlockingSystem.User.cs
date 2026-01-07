@@ -1,5 +1,6 @@
 using Content.Shared.Damage;
-using Content.Shared.Damage.Prototypes;
+using Content.Shared.Damage.Components;
+using Content.Shared.Damage.Systems;
 using Content.Shared.Popups;
 using Robust.Shared.Audio;
 using Robust.Shared.Audio.Systems;
@@ -48,39 +49,39 @@ public sealed partial class BlockingSystem
 
     private void OnUserDamageModified(EntityUid uid, BlockingUserComponent component, DamageModifyEvent args)
     {
-        if (TryComp<BlockingComponent>(component.BlockingItem, out var blocking))
-        {
-            if (args.Damage.GetTotal() <= 0)
-                return;
+        if (component.BlockingItem is not { } item || !TryComp<BlockingComponent>(item, out var blocking))
+            return;
 
-            // A shield should only block damage it can itself absorb. To determine that we need the Damageable component on it.
-            if (!TryComp<DamageableComponent>(component.BlockingItem, out var dmgComp))
-                return;
+        if (args.Damage.GetTotal() <= 0)
+            return;
+
+        // A shield should only block damage it can itself absorb. To determine that we need the Damageable component on it.
+        if (!TryComp<DamageableComponent>(item, out var dmgComp))
+            return;
             var rand = new System.Random((int)_timing.CurTick.Value);
             var roll = rand.NextFloat(0, 1);
 
-            var blockFraction = blocking.IsBlocking ? blocking.ActiveBlockFraction : blocking.PassiveBlockFraction;
-            blockFraction = Math.Clamp(blockFraction, 0, 1);
-            if (roll < 0.9f)
+        var blockFraction = blocking.IsBlocking ? blocking.ActiveBlockFraction : blocking.PassiveBlockFraction;
+        blockFraction = Math.Clamp(blockFraction, 0, 1);
+        if (roll < 0.9f)
             {
                 _popup.PopupPredicted(Loc.GetString("test-block"), uid, args.Origin, PopupType.Large);
-                _damageable.TryChangeDamage(component.BlockingItem, blockFraction * args.OriginalDamage);
+                _damageable.TryChangeDamage((item, dmgComp), blockFraction * args.OriginalDamage);
                 blockFraction = 1;
                 //args.
             }
 
-            var modify = new DamageModifierSet();
-            foreach (var key in dmgComp.Damage.DamageDict.Keys)
-            {
-                modify.Coefficients.TryAdd(key, 1 - blockFraction);
-            }
+        var modify = new DamageModifierSet();
+        foreach (var key in dmgComp.Damage.DamageDict.Keys)
+        {
+            modify.Coefficients.TryAdd(key, 1 - blockFraction);
+        }
 
-            args.Damage = DamageSpecifier.ApplyModifierSet(args.Damage, modify);
+        args.Damage = DamageSpecifier.ApplyModifierSet(args.Damage, modify);
 
-            if (blocking.IsBlocking && !args.Damage.Equals(args.OriginalDamage))
-            {
-                _audio.PlayPvs(blocking.BlockSound, uid);
-            }
+        if (blocking.IsBlocking && !args.Damage.Equals(args.OriginalDamage))
+        {
+            _audio.PlayPvs(blocking.BlockSound, uid);
         }
     }
 

@@ -12,6 +12,8 @@
   - type: AntagImmune
   - type: StaminaResistance
     damageCoefficient: 0 # No more stunning colossi
+    worn: false
+    meleeResistance: true
   - type: Sprite
     drawdepth: Mobs
     sprite: _DV/CosmicCult/Mobs/colossus.rsi
@@ -75,7 +77,7 @@
       fix1:
         shape:
           !type:PhysShapeCircle
-          radius: 0.25
+          radius: 0.42
         density: 2500
         mask:
         - FlyingMobMask
@@ -83,6 +85,9 @@
         - FlyingMobLayer
   - type: WarpPoint
     follow: true
+    blacklist:
+      tags:
+      - GhostOnlyWarp
   - type: Body
     requiredLegs: 0
   - type: Emoting
@@ -116,6 +121,7 @@
     - CannotSuicide
     - DoorBumpOpener
     - Unimplantable
+    - GhostOnlyWarp # Prevents it from being warped to or being a warp location bombing target
   - type: Damageable
     damageContainer: InorganicMetaphysical
     damageModifierSet: EntropicColossus
@@ -167,7 +173,6 @@
   - type: StatusEffects
     allowed:
     - Stutter
-    - Stun
   - type: IntrinsicRadioReceiver
   - type: IntrinsicRadioTransmitter
     channels:

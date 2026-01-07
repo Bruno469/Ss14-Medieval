@@ -1,6 +1,7 @@
 using Content.Shared._DV.Abilities;
 using Content.Shared.Abilities.Psionics;
 using Content.Shared.Actions;
+using Content.Shared.Coordinates;
 using Robust.Server.Audio;
 
 namespace Content.Server._DV.Abilities;
@@ -10,6 +11,7 @@ public sealed partial class PsychokineticScreamPowerSystem : EntitySystem
     [Dependency] private readonly AudioSystem _audio = default!;
     [Dependency] private readonly SharedActionsSystem _actions = default!;
     [Dependency] private readonly ShatterLightsAbilitySystem _shatterLights = default!;
+    [Dependency] private readonly SharedPsionicAbilitiesSystem _psionics = default!;
 
     public override void Initialize()
     {
@@ -50,6 +52,11 @@ public sealed partial class PsychokineticScreamPowerSystem : EntitySystem
             _audio.PlayPvs(entity.Comp.AbilitySound, entity);
 
         _shatterLights.ShatterLightsAround(entity.Owner, entity.Comp.Radius, entity.Comp.LineOfSight);
+
+        SpawnAttachedTo(entity.Comp.Effect, entity.Owner.ToCoordinates());
+
+        _psionics.LogPowerUsed(entity.Owner, "psychokinetic scream", 3, 6);
+
         args.Handled = true;
     }
 
