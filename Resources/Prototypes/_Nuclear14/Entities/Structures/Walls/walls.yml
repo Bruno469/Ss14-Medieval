@@ -50,3 +50,206 @@
     sprite: _Nuclear14/Structures/Walls/nc14/concretedark.rsi
   - type: Icon
     sprite: _Nuclear14/Structures/Walls/nc14/concretedark.rsi
+## CE Walls
+- type: entity
+  abstract: true
+  parent: BaseWall
+  categories: [ ForkFiltered ]
+  id: CEBaseWall
+  name: wall
+  description: Sturdy enough to cover you from threats or cold winds.
+  placement:
+    mode: SnapgridCenter
+    snap:
+    - Wall
+  components:
+  - type: Transform
+    noRot: true
+  - type: Sprite
+    drawdepth: Mobs
+  - type: SpriteFade
+  - type: IconSmooth
+    key: CEwall
+    base: stone
+  - type: Icon
+    state: full
+  - type: PlacementReplacement
+    key: walls
+
+- type: entity
+  id: CEBaseWallFrame
+  categories: [ ForkFiltered ]
+  parent: BaseStructure
+  abstract: true
+  description: This wall is now in an indeterminate state between existence and non-existence.
+  placement:
+    mode: SnapgridCenter
+    snap:
+    - Wall
+  components:
+  - type: Sprite
+    drawdepth: Mobs
+    snapCardinals: true
+  - type: PlacementReplacement
+    key: walls
+  - type: Transform
+    anchored: true
+    noRot: false
+  - type: SpriteFade
+  - type: Physics
+    bodyType: Static
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.5,-0.5,0.5,0.5"
+        mask:
+        - FullTileMask
+        layer:
+        - WallLayer
+        density: 1000
+
+## 3D Walls
+- type: entity
+  parent: CEBaseWall
+  id: WallSolid2
+  name: brick solid
+  components:
+  - type: Sprite
+    sprite: _Nuclear14/Structures/Walls/ms13/tall/brick.rsi
+  - type: Icon
+    sprite: _Nuclear14/Structures/Walls/ms13/tall/brick.rsi
+  - type: IconSmooth
+    key: walls
+    base: tallbrick
+
+- type: entity
+  parent: CEBaseWall
+  id: AndroWallWoodSolid
+  name: wood solid
+  components:
+  - type: Sprite
+    sprite: _Nuclear14/Structures/Walls/ms13/tall/wood.rsi
+  - type: Icon
+    sprite: _Nuclear14/Structures/Walls/ms13/tall/wood.rsi
+  - type: IconSmooth
+    key: walls
+    base: tallwood
+
+- type: entity
+  parent: CEBaseWall
+  id: AndroWallRustMetalSolid
+  name: rust metal solid
+  components:
+  - type: Sprite
+    sprite: _Nuclear14/Structures/Walls/ms13/tall/rustmetal.rsi
+  - type: Icon
+    sprite: _Nuclear14/Structures/Walls/ms13/tall/rustmetal.rsi
+  - type: IconSmooth
+    key: walls
+    base: tallrustmetal
+
+- type: entity
+  parent: CEBaseWall
+  id: AndroWallSewerSolid
+  name: sewer solid
+  components:
+  - type: Sprite
+    sprite: _Nuclear14/Structures/Walls/ms13/tall/sewer.rsi
+  - type: Icon
+    sprite: _Nuclear14/Structures/Walls/ms13/tall/sewer.rsi
+  - type: IconSmooth
+    key: walls
+    base: tallsewer
+
+- type: entity
+  parent: CEBaseWall
+  id: AndroWallSewerSolid
+  name: sewer solid
+  components:
+  - type: Sprite
+    sprite: _Nuclear14/Structures/Walls/ms13/tall/sewer.rsi
+  - type: Icon
+    sprite: _Nuclear14/Structures/Walls/ms13/tall/sewer.rsi
+  - type: IconSmooth
+    key: walls
+    base: tallsewer
+
+- type: entity
+  parent: CEBaseWall
+  id: AndroWallSidingSolid
+  name: siding solid
+  components:
+  - type: Sprite
+    sprite: _Nuclear14/Structures/Walls/ms13/tall/siding.rsi
+  - type: Icon
+    sprite: _Nuclear14/Structures/Walls/ms13/tall/siding.rsi
+  - type: IconSmooth
+    key: walls
+    base: tallsiding
+
+- type: entity
+  parent: CEBaseWall
+  id: AndroWallRockDroughtSolid
+  name: rock drought solid
+  components:
+  - type: Sprite
+    sprite: _Nuclear14/Structures/Walls/ms13/tall/rockdrought.rsi
+  - type: Icon
+    sprite: _Nuclear14/Structures/Walls/ms13/tall/rockdrought.rsi
+  - type: IconSmooth
+    key: walls
+    base: tallrockdrought
+
+- type: entity
+  parent: CEBaseWall
+  id: AndroRockSolid
+  name: rock solid
+  components:
+  - type: Sprite
+    sprite: _Nuclear14/Structures/Walls/ms13/tall/rock.rsi
+  - type: Icon
+    sprite: _Nuclear14/Structures/Walls/ms13/tall/rock.rsi
+  - type: IconSmooth
+    key: walls
+    base: tallrock
+
+- type: entity
+  parent: CEBaseWall
+  id: AndroRockMammothSolid
+  name: rock mammoth solid
+  components:
+  - type: Sprite
+    sprite: _Nuclear14/Structures/Walls/ms13/tall/rockmammoth.rsi
+  - type: Icon
+    sprite: _Nuclear14/Structures/Walls/ms13/tall/rockmammoth.rsi
+  - type: IconSmooth
+    key: walls
+    base: tallrockmammoth
+
+- type: entity
+  parent: CEBaseWall
+  id: AndroConcreteSolid
+  name: concrete solid
+  components:
+  - type: Sprite
+    sprite: _Nuclear14/Structures/Walls/ms13/tall/concrete.rsi
+  - type: Icon
+    sprite: _Nuclear14/Structures/Walls/ms13/tall/concrete.rsi
+  - type: IconSmooth
+    key: walls
+    base: tallconcrete
+
+- type: entity
+  parent: CEBaseWall
+  id: AndroBrickGraySolid
+  name: brick gray solid
+  components:
+  - type: Sprite
+    sprite: _Nuclear14/Structures/Walls/ms13/tall/brickgray.rsi
+  - type: Icon
+    sprite: _Nuclear14/Structures/Walls/ms13/tall/brickgray.rsi
+  - type: IconSmooth
+    key: walls
+    base: tallbrickgray

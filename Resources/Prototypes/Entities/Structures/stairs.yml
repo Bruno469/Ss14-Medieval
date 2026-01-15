@@ -39,6 +39,12 @@
             max: 4
       - !type:DoActsBehavior
         acts: [ "Destruction" ]
+  - type: CEZLevelHighGround
+    stick: true
+    heightCurve:
+    - 1.05
+    - 1.05
+    - 0.1
 
 - type: entity
   id: StairStage
