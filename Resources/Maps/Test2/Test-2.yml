@@ -4,7 +4,7 @@ meta:
   engineVersion: 267.3.0
   forkId: ""
   forkVersion: ""
-  time: 01/14/2026 07:54:59
+  time: 01/19/2026 07:01:18
   entityCount: 1
 maps:
 - 1
@@ -14,7 +14,6 @@ orphans: []
 nullspace: []
 tilemap:
   0: Space
-  1: FloorSteelPavementVertical
 entities:
 - proto: ""
   entities:
@@ -56,6 +55,4 @@ entities:
       dnas: []
       fibers: []
       fingerprints: []
-    - type: Roof
-      data: {}
 ...

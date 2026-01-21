@@ -1,0 +1,45 @@
+- type: gameMap
+  id: MapaReino
+  mapName: Reino
+  mapsBelow:
+  - /Maps/Reino/Reino-1.yml
+  - /Maps/Reino/Reino-2.yml
+  - /Maps/Reino/Reino-3.yml
+  - /Maps/Reino/Reino-4.yml
+  mapPath: /Maps/Reino/Reino0.yml
+  mapsAbove:
+  - /Maps/Reino/Reino1.yml
+  - /Maps/Reino/Reino2.yml
+  - /Maps/Reino/Reino3.yml
+  - /Maps/Reino/Reino4.yml
+  - /Maps/Reino/Reino5.yml
+  zLevelsComponentOverrides:
+     - type: MapAtmosphere
+       space: False
+       mixture:
+         volume: 2500
+         immutable: True
+         temperature: 293.15
+         moles:
+           Oxygen: 21.824879
+           Nitrogen: 82.10312
+     - type: SunShadowCycle
+       offset: 100
+       duration: 300
+     - type: LightCycle
+       offset: 100
+       duration: 300
+       originalColor: "#75e3ff"
+     - type: SunShadow
+     - type: MapLight
+       ambientLightColor: "#75e3ff"
+  minPlayers: 0
+  stations:
+    Test:
+      stationProto: TestStation
+      components:
+        - type: StationNameSetup
+          mapNameTemplate: "ZLEVEL"
+        - type: StationJobs
+          availableJobs:
+            Baron: [ -1, -1 ]

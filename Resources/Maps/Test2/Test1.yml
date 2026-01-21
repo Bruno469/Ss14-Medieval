@@ -4,8 +4,8 @@ meta:
   engineVersion: 267.3.0
   forkId: ""
   forkVersion: ""
-  time: 01/14/2026 07:54:59
-  entityCount: 26
+  time: 01/19/2026 07:01:18
+  entityCount: 31
 maps:
 - 1
 grids:
@@ -68,16 +68,6 @@ entities:
       dnas: []
       fibers: []
       fingerprints: []
-    - type: Roof
-      data:
-        0,0: 1061109567
-        0,-1: 4539911003189542912
-        -1,-1: 9259542123265392640
-        -1,0: 2155905152
-        2,-1: 71774877798825726
-        3,-1: 1978051601041159
-        2,-2: 18302628885633695744
-        3,-2: 504403158265495552
     - type: RadiationGridResistance
 - proto: AndroConcreteSolid
   entities:
@@ -146,21 +136,6 @@ entities:
     - type: Transform
       pos: 20.5,-7.5
       parent: 1
-  - uid: 17
-    components:
-    - type: Transform
-      pos: 21.5,-7.5
-      parent: 1
-  - uid: 18
-    components:
-    - type: Transform
-      pos: 22.5,-7.5
-      parent: 1
-  - uid: 19
-    components:
-    - type: Transform
-      pos: 23.5,-7.5
-      parent: 1
   - uid: 20
     components:
     - type: Transform
@@ -191,26 +166,70 @@ entities:
     - type: Transform
       pos: 25.5,-3.5
       parent: 1
-- proto: StairStageWood
+- proto: N14WindowConcreteTall
   entities:
+  - uid: 11
+    components:
+    - type: Transform
+      pos: 22.5,-7.5
+      parent: 1
+  - uid: 12
+    components:
+    - type: Transform
+      pos: 23.5,-7.5
+      parent: 1
+  - uid: 17
+    components:
+    - type: Transform
+      pos: 21.5,-7.5
+      parent: 1
+  - uid: 19
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: 18.5,-4.5
+      parent: 1
   - uid: 26
     components:
     - type: Transform
       rot: -1.5707963267948966 rad
-      pos: 21.5,-3.5
+      pos: 18.5,-5.5
       parent: 1
-- proto: WindowDirectional
+- proto: N14WindowTall
   entities:
-  - uid: 11
+  - uid: 27
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: 18.5,-4.5
+      parent: 1
+  - uid: 28
     components:
     - type: Transform
       rot: 1.5707963267948966 rad
       pos: 18.5,-5.5
       parent: 1
-  - uid: 12
+  - uid: 29
     components:
     - type: Transform
-      rot: 1.5707963267948966 rad
-      pos: 18.5,-4.5
+      pos: 21.5,-7.5
+      parent: 1
+  - uid: 30
+    components:
+    - type: Transform
+      pos: 22.5,-7.5
+      parent: 1
+  - uid: 31
+    components:
+    - type: Transform
+      pos: 23.5,-7.5
+      parent: 1
+- proto: StairStageWood
+  entities:
+  - uid: 18
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: 22.5,-3.5
       parent: 1
 ...

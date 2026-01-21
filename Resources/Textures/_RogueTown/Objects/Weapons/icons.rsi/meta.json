@@ -1,0 +1,267 @@
+{
+  "version": 1,
+  "license": "CC-BY-SA 3.0",
+  "copyright": "Taken from BLACKSTONE: https://github.com/Blackstone-SS13/BLACKSTONE",
+  "size": {
+    "x": 32,
+    "y": 32
+  },
+  "states": [
+    {
+      "name": "battleaxe"
+    },
+    {
+      "name": "smace"
+    },
+    {
+      "name": "spiked_club"
+    },
+    {
+      "name": "morningstar"
+    },
+    {
+      "name": "idagger"
+    },
+    {
+      "name": "sdagger"
+    },
+    {
+      "name": "sdaggeralt"
+    },
+    {
+      "name": "sildagger"
+    },
+    {
+      "name": "bsword"
+    },
+    {
+      "name": "sword1"
+    },
+    {
+      "name": "sword2"
+    },
+    {
+      "name": "sword3"
+    },
+    {
+      "name": "decsword1"
+    },
+    {
+      "name": "decsword2"
+    },
+    {
+      "name": "decsword3"
+    },
+    {
+      "name": "swordshort"
+    },
+    {
+      "name": "isword"
+    },
+    {
+      "name": "iswordalt"
+    },
+    {
+      "name": "iswordshort_d"
+    },
+    {
+      "name": "iswordshort"
+    },
+    {
+      "name": "spikedmace"
+    },
+    {
+      "name": "shield_tower"
+    },
+    {
+      "name": "shield_tower_behind"
+    },
+    {
+      "name": "club1"
+    },
+    {
+      "name": "club2"
+    },
+    {
+      "name": "wsword"
+    },
+    {
+      "name": "crossbow0"
+    },
+    {
+      "name": "crossbow1"
+    },
+    {
+      "name": "bow"
+    },
+    {
+      "name": "bowr"
+    },
+    {
+      "name": "whip"
+    },
+    {
+      "name": "gwhip"
+    },
+    {
+      "name": "rapier"
+    },
+    {
+      "name": "decrapier"
+    },
+    {
+      "name": "saber"
+    },
+    {
+      "name": "decsaber"
+    },
+    {
+      "name": "cutlass"
+    },
+    {
+      "name": "lordrap"
+    },
+    {
+      "name": "falchion"
+    },
+    {
+      "name": "esaber"
+    },
+    {
+      "name": "elfdagger"
+    },
+    {
+      "name": "woodstaff"
+    },
+    {
+      "name": "stonespear"
+    },
+    {
+      "name": "cudgel"
+    },
+    {
+      "name": "stone_knife"
+    },
+    {
+      "name": "stoneaxe"
+    },
+    {
+      "name": "cleav"
+    },
+    {
+      "name": "saxe"
+    },
+    {
+      "name": "mace"
+    },
+    {
+      "name": "huntingknife"
+    },
+    {
+      "name": "Cleaver"
+    },
+    {
+      "name": "axe"
+    },
+    {
+      "name": "flail"
+    },
+    {
+      "name": "iflail"
+    },
+    {
+      "name": "Hatchet"
+    },
+    {
+      "name": "aries"
+    },
+    {
+      "name": "scepter",
+      "delays": [
+        [
+          1,
+          0.1,
+          0.1,
+          0.1,
+          0.1,
+          0.1
+        ]
+      ]
+    },
+    {
+      "name": "stunmace0"
+    },
+    {
+      "name": "stunmace1",
+      "delays": [
+        [
+          0.15,
+          0.15,
+          0.15,
+          0.15,
+          0.15,
+          0.15
+        ]
+      ]
+    },
+    {
+      "name": "ironsh"
+    },
+    {
+      "name": "ironsh_detail"
+    },
+    {
+      "name": "ironsh_behind"
+    },
+    {
+      "name": "woodsh"
+    },
+    {
+      "name": "woodsh_behind"
+    },
+    {
+      "name": "woodsh_detail"
+    },
+    {
+      "name": "pistol"
+    },
+    {
+      "name": "pistol2"
+    },
+    {
+      "name": "pistol3"
+    },
+    {
+      "name": "churchmace"
+    },
+    {
+      "name": "combatknife"
+    },
+    {
+      "name": "moonlightgs",
+      "delays": [
+        [
+          0.4,
+          0.030000001,
+          0.07,
+          0.01
+        ]
+      ]
+    },
+    {
+      "name": "bucklersh"
+    },
+    {
+      "name": "bucklersh_behind"
+    },
+    {
+      "name": "imesser"
+    },
+    {
+      "name": "claw_l"
+    },
+    {
+      "name": "claw_r"
+    }
+  ]
+}
