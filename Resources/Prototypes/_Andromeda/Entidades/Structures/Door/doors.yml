@@ -26,16 +26,16 @@
     sprite: _RogueTown/Structures/wood_door_alt.rsi
 
 - type: entity
-  id: AndroWoodDoorAlt
+  id: AndroWoodWindowDoor
   parent: WoodDoor
-  name: Wood Door
+  name: Wood Window Door
   description: A sturdy door made from wood.
   components:
   - type: Sprite
     sprite: _RogueTown/Structures/wood_window_door.rsi
 
 - type: entity
-  id: AndroWoodDoorAlt
+  id: AndroMushroomWoodDoor
   parent: WoodDoor
   name: Mushroom Wood Door
   description: A sturdy door made from mushroom wood.

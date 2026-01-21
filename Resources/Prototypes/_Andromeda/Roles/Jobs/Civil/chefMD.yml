@@ -3,7 +3,7 @@
   name: job-name-chef
   description: job-description-chef
   playTimeTracker: JobChefMD
-  startingGear: ChefGear
+  startingGear: ChefMDGear
   icon: "JobIconChef"
   supervisors: job-supervisors-hop
   access:
@@ -15,19 +15,15 @@
     - Bar #Nyano - Summary: After this line, Professional Che is a component to be added. Very important.
 
 - type: startingGear
-  id: ChefGear
-  subGear:
-    - ChefPlasmamanGear
+  id: ChefMDGear
   equipment:
-    jumpsuit: ClothingUniformJumpsuitChef
-    head: ClothingHeadHatChef
-    back: ClothingBackpackFilled
-    mask: ClothingMaskItalianMoustache
-    shoes: ClothingShoesColorBlack
-    id: ChefPDA
-    ears: ClothingHeadsetService
-    outerClothing: ClothingOuterApronChef
-    belt: ClothingBeltChefFilled
-  innerClothingSkirt: ClothingUniformJumpskirtChef
-  satchel: ClothingBackpackSatchelFilled
-  duffelbag: ClothingBackpackDuffelFilled
+    jumpsuit: ClothingUniformJumpskirtCampones2
+    #back: ClothingBackpackMusicianFilled
+    #eyes: ClothingEyesGlassesSunglasses
+    shoes: ClothingShoesBootsLaceup
+    #id: MusicianPDA
+    #ears: ClothingHeadsetService
+    #outerClothing: ClothingOuterApronChef
+    #belt: ClothingBeltChefFilled
+  #satchel: ClothingBackpackSatchelMusicianFilled
+  #duffelbag: ClothingBackpackDuffelMusicianFilled

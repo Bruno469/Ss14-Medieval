@@ -1,7 +1,7 @@
 - type: entity
-  id: AndroWoodDoor
+  id: AndroGateTestDoor
   parent: MetalDoor
-  name: Wood Door
+  name: Metal Door
   description: A sturdy door made from wood.
   components:
   - type: Sprite

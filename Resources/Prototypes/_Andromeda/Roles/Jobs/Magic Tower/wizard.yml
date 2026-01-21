@@ -3,7 +3,7 @@
   name: job-name-wizard
   description: job-description-wizard
   playTimeTracker: JobWizard
-  startingGear: ScientistGear
+  startingGear: WizardGear
   icon: "JobIconScientist"
   supervisors: job-supervisors-rd
   access:
@@ -11,20 +11,15 @@
     - Maintenance
 
 - type: startingGear
-  id: ScientistGear
+  id: WizardGear
   equipment:
-    ears: ClothingHeadsetScience
-  #storage:
-  #back:
-  #- Stuff
-
-- type: chameleonOutfit
-  id: ScientistChameleonOutfit
-  job: Scientist
-  equipment:
-    head: ClothingHeadBandSkull
-    eyes: ClothingEyesGlassesCheapSunglasses
-    mask: ClothingMaskGas
-    neck: ClothingNeckTieSci
-    outerClothing: ClothingOuterCoatRnd
-    gloves: ClothingHandsGlovesLatex
+    jumpsuit: ClothingUniformJumpskirtCampones2
+    #back: ClothingBackpackMusicianFilled
+    #eyes: ClothingEyesGlassesSunglasses
+    shoes: ClothingShoesBootsLaceup
+    #id: MusicianPDA
+    #ears: ClothingHeadsetService
+    #outerClothing: ClothingOuterApronChef
+    #belt: ClothingBeltChefFilled
+  #satchel: ClothingBackpackSatchelMusicianFilled
+  #duffelbag: ClothingBackpackDuffelMusicianFilled

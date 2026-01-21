@@ -3,7 +3,7 @@
   name: job-name-nun
   description: job-description-nun
   playTimeTracker: JobNun
-  startingGear: ChaplainGear
+  startingGear: NunGear
   icon: "JobIconChaplain"
   supervisors: job-supervisors-rd
   access:
@@ -12,14 +12,15 @@
     - Maintenance
 
 - type: startingGear
-  id: ChaplainGear
+  id: NunGear
   equipment:
-    jumpsuit: ClothingUniformJumpsuitChaplain
-    back: ClothingBackpack
-    shoes: ClothingShoesColorBlack
-    id: ChaplainPDA
-    ears: ClothingHeadsetScience
-    pocket1: BookPsionicsGuidebook
-  innerClothingSkirt: ClothingUniformJumpskirtChaplain
-  satchel: ClothingBackpackSatchelChaplainFilled
-  duffelbag: ClothingBackpackDuffelChaplainFilled
+    jumpsuit: ClothingUniformJumpskirtCampones2
+    #back: ClothingBackpackMusicianFilled
+    #eyes: ClothingEyesGlassesSunglasses
+    shoes: ClothingShoesBootsLaceup
+    #id: MusicianPDA
+    #ears: ClothingHeadsetService
+    #outerClothing: ClothingOuterApronChef
+    #belt: ClothingBeltChefFilled
+  #satchel: ClothingBackpackSatchelMusicianFilled
+  #duffelbag: ClothingBackpackDuffelMusicianFilled

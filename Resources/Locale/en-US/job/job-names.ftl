@@ -126,11 +126,11 @@ JobZookeeper = Zookeeper
 
 
 #Andromeda
-job-name-baron = Barão
-job-name-baroness = Baronesa
+job-name-king = Rei
+job-name-queen = Rainha
 job-name-bishop = Grande Mestre
-job-name-hand = Mão
-job-name-lcg = Lorde Comandante da Guarda
+job-name-hand = Lorde Mão
+job-name-lcg = Lorde Comandante da Guarda Real
 job-name-guard = Guarda
 job-name-nun = Freira
 job-name-alchemist = Alquimista

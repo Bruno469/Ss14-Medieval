@@ -4,7 +4,7 @@
   description: job-description-lcg
   playTimeTracker: JobLCG
   weight: 10
-  startingGear: HoSGear
+  startingGear: LCGGear
   icon: "JobIconHeadOfSecurity"
   requireAdminNotify: true
   supervisors: job-supervisors-captain
@@ -29,16 +29,15 @@
         - type: CommandStaff
 
 - type: startingGear
-  id: HoSGear
+  id: LCGGear
   equipment:
-    jumpsuit: ClothingUniformJumpsuitHoS
-    back: ClothingBackpackHOSFilled
-    shoes: ClothingShoesBootsCombatFilled
-    eyes: ClothingEyesGlassesSunglasses
-    id: HoSPDA
-    gloves: ClothingHandsGlovesCombat
-    ears: ClothingHeadsetAltSecurity
-    belt: ClothingBeltSecurityFilled
-  innerClothingSkirt: ClothingUniformJumpskirtHoS
-  satchel: ClothingBackpackSatchelHOSFilled
-  duffelbag: ClothingBackpackDuffelHOSFilled
+    jumpsuit: ClothingUniformJumpskirtCampones2
+    #back: ClothingBackpackMusicianFilled
+    #eyes: ClothingEyesGlassesSunglasses
+    shoes: ClothingShoesBootsLaceup
+    #id: MusicianPDA
+    #ears: ClothingHeadsetService
+    #outerClothing: ClothingOuterApronChef
+    #belt: ClothingBeltChefFilled
+  #satchel: ClothingBackpackSatchelMusicianFilled
+  #duffelbag: ClothingBackpackDuffelMusicianFilled

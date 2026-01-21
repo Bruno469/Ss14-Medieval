@@ -1,5 +1,5 @@
 - type: job
-  id: Master Wizard
+  id: MasterWizard
   name: job-name-md
   description: job-description-md
   playTimeTracker: JobMD

@@ -165,19 +165,6 @@
 
 - type: entity
   parent: CEBaseWall
-  id: AndroWallSewerSolid
-  name: sewer solid
-  components:
-  - type: Sprite
-    sprite: _Nuclear14/Structures/Walls/ms13/tall/sewer.rsi
-  - type: Icon
-    sprite: _Nuclear14/Structures/Walls/ms13/tall/sewer.rsi
-  - type: IconSmooth
-    key: walls
-    base: tallsewer
-
-- type: entity
-  parent: CEBaseWall
   id: AndroWallSidingSolid
   name: siding solid
   components:

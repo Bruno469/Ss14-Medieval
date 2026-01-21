@@ -3,7 +3,7 @@
   name: job-name-alchemist
   description: job-description-alchemist
   playTimeTracker: JobAlchemist
-  startingGear: ChemistGear
+  startingGear: AlchemistGear
   icon: "JobIconChemist"
   supervisors: job-supervisors-cmo
   access:
@@ -12,13 +12,15 @@
     - Maintenance
 
 - type: startingGear
-  id: ChemistGear
+  id: AlchemistGear
   equipment:
-    jumpsuit: ClothingUniformJumpsuitChemistry
-    back: ClothingBackpackChemistryFilled
-    shoes: ClothingShoesColorWhite
-    id: ChemistryPDA
-    ears: ClothingHeadsetMedical
-  innerClothingSkirt: ClothingUniformJumpskirtChemistry
-  satchel: ClothingBackpackSatchelChemistryFilled
-  duffelbag: ClothingBackpackDuffelChemistryFilled
+    jumpsuit: ClothingUniformJumpskirtCampones2
+    #back: ClothingBackpackMusicianFilled
+    #eyes: ClothingEyesGlassesSunglasses
+    shoes: ClothingShoesBootsLaceup
+    #id: MusicianPDA
+    #ears: ClothingHeadsetService
+    #outerClothing: ClothingOuterApronChef
+    #belt: ClothingBeltChefFilled
+  #satchel: ClothingBackpackSatchelMusicianFilled
+  #duffelbag: ClothingBackpackDuffelMusicianFilled

@@ -17,14 +17,12 @@
 
 - type: startingGear
   id: BardGear
-  subGear:
-    - MusicianPlasmamanGear
   equipment:
-    jumpsuit: ClothingUniformJumpsuitMusician
-    back: ClothingBackpackMusicianFilled
-    eyes: ClothingEyesGlassesSunglasses
+    jumpsuit: ClothingUniformJumpsuitCampones1
+    #back: ClothingBackpackMusicianFilled
+    #eyes: ClothingEyesGlassesSunglasses
     shoes: ClothingShoesBootsLaceup
-    id: MusicianPDA
-    ears: ClothingHeadsetService
-  satchel: ClothingBackpackSatchelMusicianFilled
-  duffelbag: ClothingBackpackDuffelMusicianFilled
+    #id: MusicianPDA
+    #ears: ClothingHeadsetService
+  #satchel: ClothingBackpackSatchelMusicianFilled
+  #duffelbag: ClothingBackpackDuffelMusicianFilled

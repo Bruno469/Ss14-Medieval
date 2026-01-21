@@ -4,7 +4,7 @@
   description: job-description-miner
   playTimeTracker: JobMiner
   icon: "JobIconShaftMiner"
-  startingGear: SalvageSpecialistGear
+  startingGear: MinerGear
   supervisors: job-supervisors-qm
   access:
     - Cargo
@@ -13,14 +13,15 @@
     - External
 
 - type: startingGear
-  id: SalvageSpecialistGear
-  subGear:
-    - SalvageSpecialistPlasmamanGear
+  id: MinerGear
   equipment:
-    jumpsuit: ClothingUniformJumpsuitSalvageSpecialist
-    back: ClothingBackpackSalvageFilled
-    shoes: ClothingShoesBootsSalvage
-    id: SalvagePDA
-    ears: ClothingHeadsetCargo
-  satchel: ClothingBackpackSatchelSalvageFilled
-  duffelbag: ClothingBackpackDuffelSalvageFilled
+    jumpsuit: ClothingUniformJumpskirtCampones2
+    #back: ClothingBackpackMusicianFilled
+    #eyes: ClothingEyesGlassesSunglasses
+    shoes: ClothingShoesBootsLaceup
+    #id: MusicianPDA
+    #ears: ClothingHeadsetService
+    #outerClothing: ClothingOuterApronChef
+    #belt: ClothingBeltChefFilled
+  #satchel: ClothingBackpackSatchelMusicianFilled
+  #duffelbag: ClothingBackpackDuffelMusicianFilled

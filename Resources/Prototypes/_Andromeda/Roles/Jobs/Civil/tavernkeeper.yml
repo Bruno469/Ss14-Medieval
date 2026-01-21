@@ -3,7 +3,7 @@
   name: job-name-tavernkeeper
   description: job-description-tavernkeeper
   playTimeTracker: JobTavernkeeper
-  startingGear: BartenderGear
+  startingGear: TavernkeeperGear
   icon: "JobIconBartender"
   supervisors: job-supervisors-hop
   access:
@@ -15,17 +15,15 @@
     - Hydroponics
 
 - type: startingGear
-  id: BartenderGear
-  subGear:
-    - BartenderPlasmamanGear
+  id: TavernkeeperGear
   equipment:
-    head: ClothingHeadHatTophat
-    jumpsuit: ClothingUniformJumpsuitBartender
-    outerClothing: ClothingOuterVest
-    back: ClothingBackpackFilled
-    shoes: ClothingShoesColorBlack
-    id: BartenderPDA
-    ears: ClothingHeadsetService
-  innerClothingSkirt: ClothingUniformJumpskirtBartender
-  satchel: ClothingBackpackSatchelFilled
-  duffelbag: ClothingBackpackDuffelFilled
+    jumpsuit: ClothingUniformJumpskirtCampones2
+    #back: ClothingBackpackMusicianFilled
+    #eyes: ClothingEyesGlassesSunglasses
+    shoes: ClothingShoesBootsLaceup
+    #id: MusicianPDA
+    #ears: ClothingHeadsetService
+    #outerClothing: ClothingOuterApronChef
+    #belt: ClothingBeltChefFilled
+  #satchel: ClothingBackpackSatchelMusicianFilled
+  #duffelbag: ClothingBackpackDuffelMusicianFilled

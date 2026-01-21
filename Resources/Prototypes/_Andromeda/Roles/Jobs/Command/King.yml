@@ -1,25 +1,26 @@
 - type: job
-  id: Guard
-  name: job-name-guard
-  description: job-description-guard
-  playTimeTracker: JobGuard
-  startingGear: GuardGear
-  icon: "JobIconSecurityOfficer"
-  supervisors: job-supervisors-hos
+  id: King
+  name: job-name-king
+  description: job-description-king
+  playTimeTracker: JobKing
+  weight: 20
+  startingGear: KingGear
+  icon: JobIconCaptain
+  requireAdminNotify: true
+  joinNotifyCrew: true
+  supervisors: job-supervisors-centcom
   canBeAntag: false
-  access:
-    - Security
-    #- Brig # Delta V: Removed
-    - Maintenance
-    - Service
-    - External
-    - Cryogenics
+  accessGroups:
+    - AllAccess
   special:
     - !type:AddImplantSpecial
       implants: [MindShieldImplant]
+    - !type:AddComponentSpecial
+      components:
+        - type: CommandStaff
 
 - type: startingGear
-  id: GuardGear
+  id: KingGear
   equipment:
     jumpsuit: ClothingUniformJumpskirtCampones2
     #back: ClothingBackpackMusicianFilled
@@ -31,3 +32,4 @@
     #belt: ClothingBeltChefFilled
   #satchel: ClothingBackpackSatchelMusicianFilled
   #duffelbag: ClothingBackpackDuffelMusicianFilled
+

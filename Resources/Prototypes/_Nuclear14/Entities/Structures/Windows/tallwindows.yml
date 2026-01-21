@@ -185,10 +185,6 @@
     intersectRatio: 0.2
     requiredTriggeredSpeed: 0
   - type: TriggerOnStepTrigger
-  - type: DamageUserOnTrigger
-    damage:
-      types:
-        Piercing: 5
   - type: SpeedModifierContacts
     walkSpeedModifier: 0.5
     sprintSpeedModifier: 0.5
