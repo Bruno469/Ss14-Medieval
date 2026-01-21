@@ -3,7 +3,7 @@
   name: job-name-bard
   description: job-description-bard
   playTimeTracker: JobBard
-  startingGear: MusicianGear
+  startingGear: BardGear
   icon: "JobIconMusician"
   supervisors: job-supervisors-hire
   access:
@@ -16,7 +16,7 @@
       prototype: BoxPerformer
 
 - type: startingGear
-  id: MusicianGear
+  id: BardGear
   subGear:
     - MusicianPlasmamanGear
   equipment:
