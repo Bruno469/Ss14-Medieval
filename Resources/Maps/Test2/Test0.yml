@@ -75,6 +75,8 @@ entities:
         path: /Audio/Effects/alert.ogg
       inherent: True
       enabled: True
+    - type: BecomesStation
+      id: Test
     - type: MapAtmosphere
       space: False
       mixture:
@@ -495,13 +497,6 @@ entities:
     - type: Transform
       rot: 3.141592653589793 rad
       pos: 21.79883,-12.56004
-      parent: 1
-- proto: PortaBase1
-  entities:
-  - uid: 55
-    components:
-    - type: Transform
-      pos: 18.5,-5.5
       parent: 1
 - proto: SpawnMobCatBingus
   entities:
