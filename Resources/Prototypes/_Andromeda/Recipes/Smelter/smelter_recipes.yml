@@ -1,0 +1,26 @@
+- type: SmelterRecipe
+  id: GoldBarSmelterRecipe
+  smelterTime: 20.0
+  fuelNeeded: 10
+  materials:
+    RawGold: 500
+  result: IngotGold1
+  resultCount: 1
+
+- type: SmelterRecipe
+  id: SilverBarSmelterRecipe
+  smelterTime: 12.0
+  fuelNeeded: 10
+  materials:
+    RawSilver: 500
+  result: IngotSilver1
+  resultCount: 1
+
+- type: SmelterRecipe
+  id: IronBarSmelterRecipe
+  smelterTime: 8.0
+  fuelNeeded: 10
+  materials:
+    RawIron: 500
+  result: SheetSteel1
+  resultCount: 1

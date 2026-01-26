@@ -1,37 +1,13 @@
-using Content.Shared.Blocking;
+using System.Diagnostics.CodeAnalysis;
+using Content.Shared.Damage.Components;
+using Content.Shared._Andromeda.Parry;
+using Content.Shared.Hands.Components;
 using Content.Shared.Damage;
 using Content.Shared.Damage.Systems;
-using Content.Shared.Interaction.Events;
 using Content.Shared.Popups;
-using Robust.Shared.Audio;
-using Robust.Shared.Audio.Systems;
-using Content.Shared._Andromeda.Input;
-using Content.Shared._Andromeda.Parry;
-using Content.Shared.Damage.Components;
-
-using System.Diagnostics.CodeAnalysis;
-using System.Linq;
-using Content.Shared.Database;
-using Content.Shared.Hands.Components;
-using Content.Shared.Hands.EntitySystems;
-using Content.Shared.Interaction;
-using Content.Shared.Inventory;
-using Content.Shared.Inventory.VirtualItem;
-using Content.Shared.Item;
-using Content.Shared.Popups;
-using Content.Shared.Storage;
-using Content.Shared.Storage.EntitySystems;
-using Content.Shared.Strip.Components;
-using Content.Shared.Verbs;
 using Content.Shared.Weapons.Melee;
-using Content.Shared.Weapons.Ranged.Components;
-using Content.Shared.Whitelist;
 using Robust.Shared.Audio;
 using Robust.Shared.Audio.Systems;
-using Robust.Shared.Containers;
-using Robust.Shared.Input.Binding;
-using Robust.Shared.Prototypes;
-using Robust.Shared.Timing;
 
 public sealed class ParrySystem : EntitySystem
 {
@@ -61,14 +37,12 @@ public sealed class ParrySystem : EntitySystem
         if (args.Damage.GetTotal() <= 0)
             return;
 
-        args.Cancelled = true;
-
-        if (!TryComp<HandsComponent>(ent.Owner, out var hands) ||
-            hands.ActiveHandEntity is not { } held ||
-            !TryComp<ParryComponent>(held, out var parry))
+        if (!TryGetActiveParryWeapon(ent.Owner, out var parry))
             return;
 
-        _popup.PopupEntity(Loc.GetString("sucess-parry"), ent.Owner, ent.Owner, PopupType.Large);
+        args.Cancelled = true;
+
+        _popup.PopupEntity(Loc.GetString("sucess-parry"), ent.Owner, ent.Owner, PopupType.Medium);
         _stamina.TakeStaminaDamage(ent.Owner, -parry.StaminaCost, visual: false, sound: null);
         _audio.PlayPvs(new SoundPathSpecifier("/Audio/Weapons/sword_crash.ogg"), ent.Owner);
 
@@ -83,13 +57,7 @@ public sealed class ParrySystem : EntitySystem
 
     private void TryParry(EntityUid user)
     {
-        if (!TryComp<HandsComponent>(user, out var hands))
-            return;
-
-        if (hands.ActiveHandEntity is not { } held)
-            return;
-
-        if (!TryComp<ParryComponent>(held, out var parry))
+        if (!TryGetActiveParryWeapon(user, out var parry))
             return;
 
         ActiveParry(user, parry);
@@ -104,18 +72,22 @@ public sealed class ParrySystem : EntitySystem
 
         parry = AddComp<ParryUserComponent>(user);
         parry.ParryTimer = source.ParryWindow;
-        Logger.Info("Parry Ativo");
     }
 
     private bool IsMeleeAttack(EntityUid attacker)
     {
-        // jogador segurando arma melee
-        if (TryComp<HandsComponent>(attacker, out var hands) &&
+        return TryComp<HandsComponent>(attacker, out var hands) &&
             hands.ActiveHandEntity is { } held &&
-            HasComp<MeleeWeaponComponent>(held))
-            return true;
+            HasComp<MeleeWeaponComponent>(held);
+    }
 
-        return false;
+    private bool TryGetActiveParryWeapon(EntityUid user, [NotNullWhen(true)] out ParryComponent? parry)
+    {
+        parry = null;
+        if (!TryComp<HandsComponent>(user, out var hands) || hands.ActiveHandEntity is not { } held)
+            return false;
+
+        return TryComp(held, out parry);
     }
 
     public override void Update(float frameTime)
@@ -129,7 +101,6 @@ public sealed class ParrySystem : EntitySystem
             if (parry.ParryTimer <= 0f)
             {
                 RemComp<ParryUserComponent>(uid);
-                Logger.Info("Parry acabou");
             }
         }
     }

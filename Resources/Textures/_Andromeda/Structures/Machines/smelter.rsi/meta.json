@@ -1,0 +1,17 @@
+{
+  "version": 1,
+  "size": {
+    "x": 96,
+    "y": 80
+  },
+  "license": "CC-BY-SA-4.0",
+  "copyright": "Dwarf Fortress © Bay 12 Games — TEMPORARY PLACEHOLDER, NOT FOR REDISTRIBUTION",
+  "states": [
+    {
+      "name": "icon"
+    },
+    {
+      "name": "working"
+    }
+  ]
+}

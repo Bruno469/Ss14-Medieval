@@ -1,0 +1,6 @@
+- type: stack
+  id: DirtStack
+  name: stack-dirt
+  icon: { sprite: "_Andromeda/Objects/Materials/dirt.rsi", state: dirt_2 }
+  spawn: DirtBlock1
+  maxCount: 10

@@ -1,0 +1,54 @@
+- type: entity
+  id: Millstone
+  name: Millstone
+  description: A heavy grinding stone used to crush grains and other materials into finer products.
+  placement:
+    mode: SnapgridCenter
+  suffix: grinder
+  components:
+  - type: Millstone
+  - type: Solution
+  - type: DrainableSolution
+    Solution: default
+  - type: SolutionContainerManager
+    solutions:
+      default:
+        maxVol: 50
+  - type: Clickable
+  - type: InteractionOutline
+  - type: Physics
+    bodyType: Static
+  - type: Damageable
+    damageContainer: Inorganic
+    damageModifierSet: Metallic
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 130
+      behaviors:
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+  - type: ActivatableUI
+    key: enum.MillstoneUiKey.Key
+  - type: UserInterface
+    interfaces:
+      enum.MillstoneUiKey.Key:
+        type: MillstoneBoundUserInterface
+  - type: Appearance
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.45,-0.45,0.45,0.1"
+        mask:
+        - FullTileMask
+        layer:
+        - FullTileMask
+  - type: Sprite
+    sprite: _Andromeda/Structures/Machines/millstone.rsi
+    state: icon
+  - type: ContainerContainer
+    containers:
+      inputContainer: !type:Container

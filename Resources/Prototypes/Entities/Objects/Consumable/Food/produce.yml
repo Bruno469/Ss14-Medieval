@@ -25,6 +25,7 @@
   id: FoodProduceBase
   abstract: true
   components:
+  - type: PerishableFood # Andromeda Medieval
   - type: SolutionContainerManager
   - type: Sprite
     state: produce

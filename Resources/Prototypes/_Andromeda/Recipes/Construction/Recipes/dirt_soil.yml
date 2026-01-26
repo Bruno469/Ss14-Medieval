@@ -1,0 +1,13 @@
+- type: construction
+  id: DirtSoilConst
+  graph: DirtSoilConst
+  startNode: start
+  targetNode: dirtsoil
+  category: construction-category-structures
+  objectType: Structure
+  placementMode: SnapgridCenter
+  description: crafting-menu-text-DS
+  canRotate: true
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked

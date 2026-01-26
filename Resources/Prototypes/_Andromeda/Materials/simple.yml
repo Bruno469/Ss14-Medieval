@@ -1,0 +1,10 @@
+- type: material
+  id: Dirt
+  name: material-dirt-block
+  stackEntity: DirtMaterial1
+  unit: materials-unit-chunk
+  icon:
+    sprite: _Andromeda/Objects/Materials/dirt.rsi
+    state: dirt_2
+  color: "#5e3f31"
+  price: 0

@@ -547,9 +547,15 @@
         Blunt: 14
     soundHit:
       collection: MetalThud
+  - type: Tool # Andromeda - medieval
+    qualities:
+      - Digging
+    useSound:
+      path: /Audio/Items/shovel_dig.ogg
   - type: Item
     size: Normal
     sprite: Objects/Tools/shovel.rsi
+  - type: ToolTileCompatible # Andromeda - medieval
   - type: PhysicalComposition
     materialComposition:
       Steel: 100

@@ -1,0 +1,55 @@
+<controls:FancyWindow xmlns="https://spacestation14.io"
+                      xmlns:ui="clr-namespace:Content.Client._Andromeda.Millstone.UI"
+                      xmlns:controls="clr-namespace:Content.Client.UserInterface.Controls"
+                      Title="{Loc millstone-menu-title}"
+                      MinSize="820 320">
+
+    <!-- Painel principal -->
+    <PanelContainer StyleClasses="MillstonePanel" Margin="8">
+        <BoxContainer Orientation="Horizontal">
+
+            <!-- Coluna  -->
+            <PanelContainer StyleClasses="MillstoneSidePanel" Margin="8">
+                <BoxContainer Orientation="Vertical"
+                              VerticalAlignment="Top"
+                              MinWidth="140"
+                              Margin="8">
+
+                    <Label Text="{Loc millstone-menu-label}"
+                           HorizontalAlignment="Center"
+                           StyleClasses="MillstoneHeader"/>
+
+                    <Button Name="GrindButton"
+                            Text="{Loc grinder-menu-grind-button}"
+                            MinSize="96 48"
+                            Margin="0 4 0 8"
+                            StyleClasses="MillstoneButton"/>
+
+                </BoxContainer>
+            </PanelContainer>
+
+            <!-- Conteúdo da millstone -->
+            <ui:LabelledContent Name="ChamberContentBox"
+                                   LabelText="{Loc millstone-menu-chamber-label}"
+                                   ButtonText="{Loc grinder-menu-chamber-content-box-button}"
+                                   ShowButton="True"
+                                   Margin="8"
+                                   SizeFlagsStretchRatio="2"
+                                   StyleClasses="MillstoneBox"
+                                   VerticalExpand="True"
+                                   HorizontalExpand="True"/>
+
+            <!-- Conteúdo do pote -->
+            <ui:LabelledContent Name="BeakerContentBox"
+                                   LabelText="{Loc millstone-menu-beaker-label}"
+                                   ButtonText="{Loc grinder-menu-beaker-content-box-button}"
+                                   ShowButton="False"
+                                   Margin="8"
+                                   SizeFlagsStretchRatio="2"
+                                   StyleClasses="MillstoneBox"
+                                   VerticalExpand="True"
+                                   HorizontalExpand="True"/>
+
+        </BoxContainer>
+    </PanelContainer>
+</controls:FancyWindow>

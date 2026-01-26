@@ -9,11 +9,13 @@
   - 1.0
   - 1.0
   isSubfloor: true
+  baseTurf: FloorBasalt # Andromeda - medieval
   footstepSounds:
     collection: FootstepAsteroid
+  deconstructTools: [ Digging ] # Andromeda - medieval
+  itemDrop: DirtMaterial1 # Andromeda - medieval
   heatCapacity: 10000
   weather: true
-  indestructible: true
 
 # Desert
 - type: tile

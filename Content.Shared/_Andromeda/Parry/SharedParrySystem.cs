@@ -1,6 +1,3 @@
 namespace Content.Shared._Andromeda.Parry;
 
-public sealed class SharedParrySystem : EntitySystem
-{
-
-}
+public sealed class SharedParrySystem : EntitySystem {}
