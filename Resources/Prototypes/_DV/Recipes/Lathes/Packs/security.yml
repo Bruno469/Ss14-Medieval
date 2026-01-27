@@ -31,6 +31,13 @@
   - MagazineLaser
 
 - type: latheRecipePack
+  id: SecurityShotgunDrumsStatic
+  recipes:
+  - MagazineShotgun
+  - MagazineShotgunEmpty
+  - MagazineShotgunSlug
+
+- type: latheRecipePack
   id: SecurityRubberAmmoStatic
   recipes:
   - MagazinePistolRubber
@@ -100,3 +107,9 @@
   recipes:
   - ClothingOuterHardsuitEVAPrisoner
   - ClothingHeadHelmetEVALarge
+
+- type: latheRecipePack
+  id: AdvancedPsionicProsthetics
+  recipes:
+  - PyroLeftArm
+  - ZapLeftArm

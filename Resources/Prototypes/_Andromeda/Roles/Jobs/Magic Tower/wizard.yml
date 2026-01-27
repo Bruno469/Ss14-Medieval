@@ -1,0 +1,25 @@
+- type: job
+  id: Wizard
+  name: job-name-wizard
+  description: job-description-wizard
+  playTimeTracker: JobWizard
+  startingGear: WizardGear
+  icon: "JobIconScientist"
+  supervisors: job-supervisors-rd
+  access:
+    - Research
+    - Maintenance
+
+- type: startingGear
+  id: WizardGear
+  equipment:
+    jumpsuit: ClothingUniformJumpskirtCampones2
+    #back: ClothingBackpackMusicianFilled
+    #eyes: ClothingEyesGlassesSunglasses
+    shoes: ClothingShoesBootsLaceup
+    #id: MusicianPDA
+    #ears: ClothingHeadsetService
+    #outerClothing: ClothingOuterApronChef
+    #belt: ClothingBeltChefFilled
+  #satchel: ClothingBackpackSatchelMusicianFilled
+  #duffelbag: ClothingBackpackDuffelMusicianFilled

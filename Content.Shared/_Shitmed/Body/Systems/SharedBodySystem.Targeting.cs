@@ -23,6 +23,8 @@ using System.Threading;
 using System.Threading.Tasks;
 using Content.Shared.Blocking;
 using Content.Shared.Inventory;
+using Content.Shared.Damage.Systems;
+using Content.Shared.Damage.Components;
 
 // Namespace has set accessors, leaving it on the default.
 namespace Content.Shared.Body.Systems;
@@ -32,7 +34,6 @@ public partial class SharedBodySystem
     [Dependency] private readonly INetManager _net = default!;
     [Dependency] private readonly MobStateSystem _mobState = default!;
     [Dependency] private readonly IRobustRandom _random = default!;
-    [Dependency] private readonly DamageableSystem _damageable = default!;
 
     [Dependency] private readonly SharedPopupSystem _popup = default!;
     private const double IntegrityJobTime = 0.005;
@@ -65,7 +66,7 @@ public partial class SharedBodySystem
     private void InitializeIntegrityQueue()
     {
         _queryTargeting = GetEntityQuery<TargetingComponent>();
-        SubscribeLocalEvent<BodyComponent, TryChangePartDamageEvent>(OnTryChangePartDamage);
+        SubscribeLocalEvent<BodyComponent, BeforePartDamageChangedEvent>(OnTryChangePartDamage);
         SubscribeLocalEvent<BodyComponent, DamageModifyEvent>(OnBodyDamageModify);
         SubscribeLocalEvent<BodyPartComponent, DamageModifyEvent>(OnPartDamageModify);
         SubscribeLocalEvent<BodyPartComponent, DamageChangedEvent>(OnDamageChanged);
@@ -83,7 +84,7 @@ public partial class SharedBodySystem
             && damage <= entity.Comp.IntegrityThresholds[TargetIntegrity.HeavilyWounded]
             && _queryTargeting.HasComp(body)
             && !_mobState.IsDead(body))
-            _damageable.TryChangeDamage(entity, GetHealingSpecifier(entity), canSever: false, targetPart: GetTargetBodyPart(entity));
+            Damageable.TryChangeDamage(entity.Owner, GetHealingSpecifier(entity), canSever: false, targetPart: GetTargetBodyPart(entity));
     }
 
     public override void Update(float frameTime)
@@ -107,7 +108,7 @@ public partial class SharedBodySystem
         }
     }
 
-    private void OnTryChangePartDamage(Entity<BodyComponent> ent, ref TryChangePartDamageEvent args)
+    private void OnTryChangePartDamage(Entity<BodyComponent> ent, ref BeforePartDamageChangedEvent args)
     {
         if (TryComp<BlockingUserComponent>(ent.Owner, out var blockComp))
         {
@@ -207,9 +208,7 @@ public partial class SharedBodySystem
                 if (canEvade && TryEvadeDamage(entity, GetEvadeChance(targetType)))
                     continue;
 
-                var damageResult = _damageable.TryChangeDamage(part.FirstOrDefault().Id, damage * partMultiplier, ignoreResistances, canSever: canSever);
-                if (damageResult != null && damageResult.GetTotal() != 0)
-                    landed = true;
+                landed = Damageable.TryChangeDamage(part.FirstOrDefault().Id, damage * partMultiplier, ignoreResistances, canSever: canSever);
             }
         }
 
@@ -509,7 +508,7 @@ public partial class SharedBodySystem
             || !TryComp<StandingStateComponent>(uid, out var standingState)
             || _mobState.IsCritical(uid, mobState)
             || _mobState.IsDead(uid, mobState)
-            || standingState.CurrentState == StandingState.Lying)
+            || !standingState.Standing)
             return false;
 
         return true;

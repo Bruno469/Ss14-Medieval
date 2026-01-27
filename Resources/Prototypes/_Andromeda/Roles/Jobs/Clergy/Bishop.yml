@@ -1,0 +1,53 @@
+- type: job
+  id: Bishop
+  name: job-name-bishop
+  description: job-description-bishop
+  playTimeTracker: JobBishop
+  antagAdvantage: 6 # DeltaV - Reduced TC: Head of Staff
+  weight: 10 # DeltaV - Changed HoP weight from 20 to 10 due to them not being more important than other Heads
+  startingGear: BishopGear
+  icon: "JobIconHeadOfPersonnel"
+  requireAdminNotify: true
+  supervisors: job-supervisors-captain
+  canBeAntag: false
+  access:
+    - Command
+    - HeadOfPersonnel
+    - Bar
+    - Service
+    - Maintenance
+    - Janitor
+    - Theatre
+    - Kitchen
+    - Hydroponics
+    - External
+    - Cryogenics
+    - Lawyer
+    - Cargo
+    - Boxer # DeltaV - Add Boxer access
+    - Clown # DeltaV - Add Clown access
+    - Library # DeltaV - Add Library access
+    - Mime # DeltaV - Add Mime access
+    - Musician # DeltaV - Add Musician access
+    - Reporter # DeltaV - Add Reporter access
+    - Zookeeper # DeltaV - Add Zookeeper access
+  special:
+    - !type:AddImplantSpecial
+      implants: [MindShieldImplant]
+    - !type:AddComponentSpecial
+      components:
+        - type: CommandStaff
+
+- type: startingGear
+  id: BishopGear
+  equipment:
+    jumpsuit: ClothingUniformJumpskirtCampones2
+    #back: ClothingBackpackMusicianFilled
+    #eyes: ClothingEyesGlassesSunglasses
+    shoes: ClothingShoesBootsLaceup
+    #id: MusicianPDA
+    #ears: ClothingHeadsetService
+    #outerClothing: ClothingOuterApronChef
+    #belt: ClothingBeltChefFilled
+  #satchel: ClothingBackpackSatchelMusicianFilled
+  #duffelbag: ClothingBackpackDuffelMusicianFilled

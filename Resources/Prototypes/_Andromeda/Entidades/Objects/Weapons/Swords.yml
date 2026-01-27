@@ -1,0 +1,170 @@
+## Andromeda Swords
+
+- type: entity
+  name: Base Andromeda Sword
+  parent: BaseSword
+  id: AndroBaseSword
+  description: Base
+  abstract: true
+  components:
+  - type: Sprite
+    sprite: _RogueTown/Objects/Weapons/icons.rsi
+    state: sword1
+  - type: Reflect
+    reflectProb: .1
+    spread: 90
+  - type: DisarmMalus
+  - type: Clothing
+    quickEquip: false
+    slots:
+    - back
+    - suitStorage
+    - belt
+
+
+
+- type: entity
+  parent: AndroBaseSword
+  id: AndroSilverSword
+  name: silver sword
+  description: A beautiful sword made almost entirely of silver. It's blade is dull and can't hold an edge, but perhaps it could be something more...
+  components:
+  - type: Sprite
+    state: sword3
+  - type: MeleeWeapon
+    damage:
+      types:
+        Slash: 15
+
+- type: entity
+  parent: AndroBaseSword
+  id: AndroIronSword
+  name: iron sword
+  description: A sturdy iron sword, good for cutting and thrusting.
+  components:
+  - type: Sprite
+    state: sword1
+  - type: MeleeWeapon
+    damage:
+      types:
+        Slash: 15
+
+- type: entity
+  parent: AndroBaseSword
+  id: AndroCutlassSword
+  name: cutlass sword
+  description: cutlass
+  components:
+  - type: Sprite
+    sprite: _RogueTown/Objects/Weapons/icons.rsi
+    state: cutlass
+  - type: MeleeWeapon
+    damage:
+      types:
+        Slash: 16
+    soundHit:
+      path: /Audio/Weapons/bladeslice.ogg
+
+- type: entity
+  parent: AndroBaseSword
+  id: AndroAxe
+  name: Axe
+  description: cutlass
+  components:
+  - type: Sprite
+    sprite: _RogueTown/Objects/Weapons/icons.rsi
+    state: axe
+  - type: MeleeWeapon
+    damage:
+      types:
+        Slash: 16
+    soundHit:
+      path: /Audio/Weapons/bladeslice.ogg
+
+- type: entity
+  parent: AndroBaseSword
+  id: AndroFlail
+  name: Flail
+  description: flail
+  components:
+  - type: Sprite
+    sprite: _RogueTown/Objects/Weapons/icons.rsi
+    state: flail
+  - type: MeleeWeapon
+    damage:
+      types:
+        Slash: 16
+    soundHit:
+      path: /Audio/Weapons/bladeslice.ogg
+
+#- type: entity
+#  parent: AndroBaseSword
+#  id: AndroHalberd
+#  name: Halberd
+#  description: flail
+#  components:
+#  - type: Sprite
+#    sprite: _RogueTown/Objects/Weapons/big_icons.rsi
+#    state: halberd
+#  - type: MeleeWeapon
+#    damage:
+#      types:
+#        Slash: 16
+#    soundHit:
+#      path: /Audio/Weapons/bladeslice.ogg
+
+- type: entity
+  parent: AndroBaseSword
+  id: AndroRapierSword
+  name: rapier sword
+  description: rapier
+  components:
+  - type: Sprite
+    sprite: _RogueTown/Objects/Weapons/icons.rsi
+    state: rapier
+  - type: MeleeWeapon
+    damage:
+      types:
+        Piercing: 10
+        Slash: 7
+    soundHit:
+      path: /Audio/Weapons/bladeslice.ogg
+
+- type: entity
+  parent: AndroBaseSword
+  id: AndroCudgel
+  name: cudgel
+  description: cudgel
+  components:
+  - type: Sprite
+    sprite: _RogueTown/Objects/Weapons/icons.rsi
+    state: cudgel
+  - type: MeleeWeapon
+    damage:
+      types:
+        Blunt: 15
+  
+- type: entity
+  parent: Stunbaton
+  id: AndroMace
+  name: Mace
+  description: cudgel
+  components:
+  - type: Sprite
+    sprite: _RogueTown/Objects/Weapons/icons.rsi
+    layers:
+    - state: stunmace0
+      map: [ "enum.ToggleableVisuals.Layer" ]
+  - type: Stunbaton
+    energyPerUse: 50
+  - type: GenericVisualizer
+    visuals:
+     enum.ToggleableVisuals.Enabled:
+        enum.ToggleableVisuals.Layer:
+          True: {state: stunmace1}
+          False: {state: stunmace0}
+
+  
+
+
+

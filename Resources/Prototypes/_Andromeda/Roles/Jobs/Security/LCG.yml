@@ -1,0 +1,43 @@
+- type: job
+  id: LordCommanderOfTheGuard
+  name: job-name-lcg
+  description: job-description-lcg
+  playTimeTracker: JobLCG
+  weight: 10
+  startingGear: LCGGear
+  icon: "JobIconHeadOfSecurity"
+  requireAdminNotify: true
+  supervisors: job-supervisors-captain
+  canBeAntag: false
+  access:
+    - HeadOfSecurity
+    - Command
+    #- Brig  # Delta V: Removed
+    - Security
+    - Armory
+    - Maintenance
+    - Service
+    - External
+    - Detective
+    - Corpsman # DeltaV - added Corpsman access
+    - Cryogenics
+  special:
+    - !type:AddImplantSpecial
+      implants: [MindShieldImplant]
+    - !type:AddComponentSpecial
+      components:
+        - type: CommandStaff
+
+- type: startingGear
+  id: LCGGear
+  equipment:
+    jumpsuit: ClothingUniformJumpskirtCampones2
+    #back: ClothingBackpackMusicianFilled
+    #eyes: ClothingEyesGlassesSunglasses
+    shoes: ClothingShoesBootsLaceup
+    #id: MusicianPDA
+    #ears: ClothingHeadsetService
+    #outerClothing: ClothingOuterApronChef
+    #belt: ClothingBeltChefFilled
+  #satchel: ClothingBackpackSatchelMusicianFilled
+  #duffelbag: ClothingBackpackDuffelMusicianFilled

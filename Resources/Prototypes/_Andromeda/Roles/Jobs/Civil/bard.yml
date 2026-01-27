@@ -1,0 +1,28 @@
+- type: job
+  id: Bard
+  name: job-name-bard
+  description: job-description-bard
+  playTimeTracker: JobBard
+  startingGear: BardGear
+  icon: "JobIconMusician"
+  supervisors: job-supervisors-hire
+  access:
+    - Maintenance # TODO Remove maint access for all gimmick jobs once access work is completed
+    - Theatre
+    - Musician # DeltaV - Add Musician access
+  special:
+    - !type:GiveItemOnHolidaySpecial
+      holiday: MikuDay
+      prototype: BoxPerformer
+
+- type: startingGear
+  id: BardGear
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitCampones1
+    #back: ClothingBackpackMusicianFilled
+    #eyes: ClothingEyesGlassesSunglasses
+    shoes: ClothingShoesBootsLaceup
+    #id: MusicianPDA
+    #ears: ClothingHeadsetService
+  #satchel: ClothingBackpackSatchelMusicianFilled
+  #duffelbag: ClothingBackpackDuffelMusicianFilled

@@ -1,0 +1,33 @@
+- type: job
+  id: Guard
+  name: job-name-guard
+  description: job-description-guard
+  playTimeTracker: JobGuard
+  startingGear: GuardGear
+  icon: "JobIconSecurityOfficer"
+  supervisors: job-supervisors-hos
+  canBeAntag: false
+  access:
+    - Security
+    #- Brig # Delta V: Removed
+    - Maintenance
+    - Service
+    - External
+    - Cryogenics
+  special:
+    - !type:AddImplantSpecial
+      implants: [MindShieldImplant]
+
+- type: startingGear
+  id: GuardGear
+  equipment:
+    jumpsuit: ClothingUniformJumpskirtCampones2
+    #back: ClothingBackpackMusicianFilled
+    #eyes: ClothingEyesGlassesSunglasses
+    shoes: ClothingShoesBootsLaceup
+    #id: MusicianPDA
+    #ears: ClothingHeadsetService
+    #outerClothing: ClothingOuterApronChef
+    #belt: ClothingBeltChefFilled
+  #satchel: ClothingBackpackSatchelMusicianFilled
+  #duffelbag: ClothingBackpackDuffelMusicianFilled

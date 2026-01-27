@@ -1356,27 +1356,3 @@
     sprite: Clothing/Uniforms/Jumpsuit/familiar_garbs.rsi
   - type: Clothing
     sprite: Clothing/Uniforms/Jumpsuit/familiar_garbs.rsi
-
-#Medieval
-
-- type: entity
-  parent: ClothingUniformBase
-  id: ClothingUniformJumpsuitCampones1
-  name: Roupa de Camponês
-  description: Uma roupa simples de camponês, feita de tecido grosso e resistente.
-  components:
-  - type: Sprite
-    sprite: _Andromeda/Clothing/Uniforms/jumpsuit/campones1.rsi
-  - type: Clothing
-    sprite: _Andromeda/Clothing/Uniforms/jumpsuit/campones1.rsi
-
-- type: entity
-  parent: ClothingUniformBase
-  id: ClothingUniformJumpskirtCampones2
-  name: Roupa de Camponês
-  description: Uma roupa simples de camponês, feita de tecido leve.
-  components:
-  - type: Sprite
-    sprite: _Andromeda/Clothing/Uniforms/Jumpskirt/campones2.rsi
-  - type: Clothing
-    sprite: _Andromeda/Clothing/Uniforms/Jumpskirt/campones2.rsi

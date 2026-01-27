@@ -1,0 +1,80 @@
+- type: entity
+  id: AndroDarkWoodDoor
+  parent: WoodDoor
+  name: Dark Wood Door
+  description: A sturdy door made from dark wood.
+  components:
+  - type: Sprite
+    sprite: _RogueTown/Structures/dark_wood_door.rsi
+
+- type: entity
+  id: AndroWoodDoor
+  parent: WoodDoor
+  name: Wood Door
+  description: A sturdy door made from wood.
+  components:
+  - type: Sprite
+    sprite: _RogueTown/Structures/wood_door.rsi
+
+- type: entity
+  id: AndroWoodDoorAlt
+  parent: WoodDoor
+  name: Wood Door
+  description: A sturdy door made from wood.
+  components:
+  - type: Sprite
+    sprite: _RogueTown/Structures/wood_door_alt.rsi
+
+- type: entity
+  id: AndroWoodWindowDoor
+  parent: WoodDoor
+  name: Wood Window Door
+  description: A sturdy door made from wood.
+  components:
+  - type: Sprite
+    sprite: _RogueTown/Structures/wood_window_door.rsi
+
+- type: entity
+  id: AndroMushroomWoodDoor
+  parent: WoodDoor
+  name: Mushroom Wood Door
+  description: A sturdy door made from mushroom wood.
+  components:
+  - type: Sprite
+    sprite: _RogueTown/Structures/mushroom_wood_door.rsi
+
+- type: entity
+  id: AndroStoneDoor
+  parent: WoodDoor
+  name: Stone wood Door
+  description: A sturdy wood door made with stone.
+  components:
+  - type: Sprite
+    sprite: _RogueTown/Structures/stone_door.rsi
+
+- type: entity
+  id: AndroWoodGoldDoor
+  parent: WoodDoor
+  name: Gold Wood Door
+  description: A sturdy door made from gold wood.
+  components:
+  - type: Sprite
+    sprite: _RogueTown/Structures/gold_wood_door.rsi
+
+- type: entity
+  id: AndroFancyWoodDoor
+  parent: WoodDoor
+  name: Fancy Wood Door
+  description: A sturdy door made from fancy wood.
+  components:
+  - type: Sprite
+    sprite: _RogueTown/Structures/fancy_wood.rsi
+
+- type: entity
+  id: AndroDojonDoor
+  parent: WoodDoor
+  name: Donjon Door
+  description: Dojon styled wooden door.
+  components:
+  - type: Sprite
+    sprite: _RogueTown/Structures/donjon_door.rsi

@@ -113,6 +113,27 @@ public sealed partial class DCCVars
         CVarDef.Create("game.current_year_offset", 550, CVar.SERVERONLY);
 
     /*
+     * Footprints
+     */
+
+    /// <summary>
+    /// Maximum number of footprints allowed per tile.
+    /// Won't allow for new footprints to spawn on the tile once reached.
+    /// Set to 0 to disable per-tile limiting.
+    /// </summary>
+    public static readonly CVarDef<int> MaxFootPrintsPerTile =
+        CVarDef.Create("footprints.max_per_tile", 2, CVar.REPLICATED);
+
+    /// <summary>
+    /// Maximum total number of footprints allowed on a single grid.
+    /// When this limit is reached, the oldest footprint on the grid will be deleted.
+    /// Set to 0 to disable global limiting.
+    /// </summary>
+    public static readonly CVarDef<int> MaxFootPrintsPerGrid =
+        CVarDef.Create("footprints.max_per_grid", 1000, CVar.REPLICATED);
+
+
+    /*
      * Feedback webhook
      */
 
@@ -168,7 +189,7 @@ public sealed partial class DCCVars
         CVarDef.Create("game.disable_preset_test", false, CVar.SERVERONLY);
 
     /// <summary>
-    /// A string containing a list of newline-separated strings to be highlighted in the chat.
+    /// A string containing a list of newline-separated strings to be highlighted in the chat. Use this instead of Wizden's CVar.
     /// </summary>
     public static readonly CVarDef<string> ChatHighlights =
         CVarDef.Create("deltav.chat.highlights",
@@ -179,6 +200,7 @@ public sealed partial class DCCVars
     /// <summary>
     /// An option to toggle the automatic filling of the highlights with the character's info, if available.
     /// </summary>
+    [Obsolete("Use CCVar.ChatAutoFillHighlights instead.")]
     public static readonly CVarDef<bool> ChatAutoFillHighlights =
         CVarDef.Create("deltav.chat.auto_fill_highlights",
             false,
@@ -188,6 +210,7 @@ public sealed partial class DCCVars
     /// <summary>
     /// The color in which the highlights will be displayed.
     /// </summary>
+    [Obsolete("Use CCVar.ChatHighlightsColor instead.")]
     public static readonly CVarDef<string> ChatHighlightsColor =
         CVarDef.Create("deltav.chat.highlights_color",
             "#17FFC1FF",

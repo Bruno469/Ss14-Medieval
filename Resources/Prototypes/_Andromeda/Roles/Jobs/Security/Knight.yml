@@ -1,0 +1,33 @@
+- type: job
+  id: Knight
+  name: job-name-knight
+  description: job-description-knight
+  playTimeTracker: JobKnight
+  startingGear: KnightGear
+  icon: "JobIconSecurityOfficer"
+  supervisors: job-supervisors-hos
+  canBeAntag: false
+  access:
+    - Security
+    #- Brig # Delta V: Removed
+    - Maintenance
+    - Service
+    - External
+    - Cryogenics
+  special:
+    - !type:AddImplantSpecial
+      implants: [MindShieldImplant]
+
+- type: startingGear
+  id: KnightGear
+  equipment:
+    jumpsuit: ClothingUniformJumpskirtCampones2
+    #back: ClothingBackpackMusicianFilled
+    #eyes: ClothingEyesGlassesSunglasses
+    shoes: ClothingShoesBootsLaceup
+    #id: MusicianPDA
+    #ears: ClothingHeadsetService
+    #outerClothing: ClothingOuterApronChef
+    #belt: ClothingBeltChefFilled
+  #satchel: ClothingBackpackSatchelMusicianFilled
+  #duffelbag: ClothingBackpackDuffelMusicianFilled

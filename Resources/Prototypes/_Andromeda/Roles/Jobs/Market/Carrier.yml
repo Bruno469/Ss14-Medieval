@@ -1,0 +1,28 @@
+- type: job
+  id: Carrier
+  name: job-name-carrier
+  description: job-description-carrier
+  playTimeTracker: JobCarrier
+  startingGear: CarrierGear
+  icon: "JobIconCargoTechnician"
+  supervisors: job-supervisors-qm
+  access:
+    - Cargo
+    - Maintenance
+  extendedAccess:
+    - Salvage
+    - Orders # DeltaV - Orders, see Resources/Prototypes/DeltaV/Access/cargo.yml
+
+- type: startingGear
+  id: CarrierGear
+  equipment:
+    jumpsuit: ClothingUniformJumpskirtCampones2
+    #back: ClothingBackpackMusicianFilled
+    #eyes: ClothingEyesGlassesSunglasses
+    shoes: ClothingShoesBootsLaceup
+    #id: MusicianPDA
+    #ears: ClothingHeadsetService
+    #outerClothing: ClothingOuterApronChef
+    #belt: ClothingBeltChefFilled
+  #satchel: ClothingBackpackSatchelMusicianFilled
+  #duffelbag: ClothingBackpackDuffelMusicianFilled

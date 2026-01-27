@@ -1,0 +1,40 @@
+- type: gameMap
+  id: ZMappingTest
+  mapName: ZMappingTest
+  mapsBelow:
+  - /Maps/Test2/Test-1.yml
+  - /Maps/Test2/Test-2.yml
+  mapPath: /Maps/Test2/Test0.yml
+  mapsAbove:
+  - /Maps/Test2/Test1.yml
+  - /Maps/Test2/Test2.yml
+  zLevelsComponentOverrides:
+     - type: MapAtmosphere
+       space: False
+       mixture:
+         volume: 2500
+         immutable: True
+         temperature: 293.15
+         moles:
+           Oxygen: 21.824879
+           Nitrogen: 82.10312
+     - type: SunShadowCycle
+       offset: 100
+       duration: 300
+     - type: LightCycle
+       offset: 100
+       duration: 300
+       originalColor: "#75e3ff"
+     - type: SunShadow
+     - type: MapLight
+       ambientLightColor: "#75e3ff"
+  minPlayers: 0
+  stations:
+    Test:
+      stationProto: TestStation
+      components:
+        - type: StationNameSetup
+          mapNameTemplate: "ZLEVEL"
+        - type: StationJobs
+          availableJobs:
+            King: [ -1, -1 ]

@@ -1,0 +1,29 @@
+- type: job
+  id: Tavernkeeper
+  name: job-name-tavernkeeper
+  description: job-description-tavernkeeper
+  playTimeTracker: JobTavernkeeper
+  startingGear: TavernkeeperGear
+  icon: "JobIconBartender"
+  supervisors: job-supervisors-hop
+  access:
+    - Service
+    - Maintenance
+    - Bar
+  extendedAccess:
+    - Kitchen
+    - Hydroponics
+
+- type: startingGear
+  id: TavernkeeperGear
+  equipment:
+    jumpsuit: ClothingUniformJumpskirtCampones2
+    #back: ClothingBackpackMusicianFilled
+    #eyes: ClothingEyesGlassesSunglasses
+    shoes: ClothingShoesBootsLaceup
+    #id: MusicianPDA
+    #ears: ClothingHeadsetService
+    #outerClothing: ClothingOuterApronChef
+    #belt: ClothingBeltChefFilled
+  #satchel: ClothingBackpackSatchelMusicianFilled
+  #duffelbag: ClothingBackpackDuffelMusicianFilled

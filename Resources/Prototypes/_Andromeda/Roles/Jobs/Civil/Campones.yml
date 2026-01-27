@@ -1,0 +1,24 @@
+- type: job
+  id: Peasant
+  name: job-name-peasant
+  description: job-description-peasant
+  playTimeTracker: JobPeasant
+  startingGear: CamponesGear
+  icon: "JobIconJanitor"
+  supervisors: job-supervisors-hop
+  access:
+    - Service
+    - Janitor
+    - Maintenance
+
+- type: startingGear
+  id: CamponesGear
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitCampones1
+    #back: ClothingBackpackMusicianFilled
+    #eyes: ClothingEyesGlassesSunglasses
+    shoes: ClothingShoesBootsLaceup
+    #id: MusicianPDA
+    #ears: ClothingHeadsetService
+  #satchel: ClothingBackpackSatchelMusicianFilled
+  #duffelbag: ClothingBackpackDuffelMusicianFilled

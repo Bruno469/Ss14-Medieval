@@ -1,0 +1,35 @@
+- type: job
+  id: WardenMD
+  name: job-name-warden
+  description: job-description-warden
+  playTimeTracker: JobWardenMD
+  startingGear: WardenGearMD
+  icon: "JobIconWarden"
+  supervisors: job-supervisors-hos
+  canBeAntag: false
+  access:
+    - Security
+    #- Brig # Delta V: Removed
+    - Armory
+    - Maintenance
+    - Service
+    - External
+    - Detective
+    - Cryogenics
+  special:
+    - !type:AddImplantSpecial
+      implants: [MindShieldImplant]
+
+- type: startingGear
+  id: WardenGearMD
+  equipment:
+    jumpsuit: ClothingUniformJumpskirtCampones2
+    #back: ClothingBackpackMusicianFilled
+    #eyes: ClothingEyesGlassesSunglasses
+    shoes: ClothingShoesBootsLaceup
+    #id: MusicianPDA
+    #ears: ClothingHeadsetService
+    #outerClothing: ClothingOuterApronChef
+    #belt: ClothingBeltChefFilled
+  #satchel: ClothingBackpackSatchelMusicianFilled
+  #duffelbag: ClothingBackpackDuffelMusicianFilled

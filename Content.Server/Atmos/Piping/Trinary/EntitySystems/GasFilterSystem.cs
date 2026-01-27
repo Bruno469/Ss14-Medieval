@@ -43,6 +43,7 @@ namespace Content.Server.Atmos.Piping.Trinary.EntitySystems
             SubscribeLocalEvent<GasFilterComponent, GasFilterChangeRateMessage>(OnTransferRateChangeMessage);
             SubscribeLocalEvent<GasFilterComponent, GasFilterSelectGasMessage>(OnSelectGasMessage);
             SubscribeLocalEvent<GasFilterComponent, GasFilterToggleStatusMessage>(OnToggleStatusMessage);
+            SubscribeLocalEvent<GasFilterComponent, MapInitEvent>(OnMapInit); // Frontier
 
         }
 
@@ -103,10 +104,10 @@ namespace Content.Server.Atmos.Piping.Trinary.EntitySystems
             if (args.Handled || !args.Complex)
                 return;
 
-            if (!EntityManager.TryGetComponent(args.User, out ActorComponent? actor))
+            if (!TryComp(args.User, out ActorComponent? actor))
                 return;
 
-            if (EntityManager.GetComponent<TransformComponent>(uid).Anchored)
+            if (Comp<TransformComponent>(uid).Anchored)
             {
                 _userInterfaceSystem.OpenUi(uid, GasFilterUiKey.Key, actor.PlayerSession);
                 DirtyUI(uid, filter);
@@ -211,5 +212,19 @@ namespace Content.Server.Atmos.Piping.Trinary.EntitySystems
 
             args.DeviceFlipped = inlet != null && filterNode != null && inlet.CurrentPipeDirection.ToDirection() == filterNode.CurrentPipeDirection.ToDirection().GetClockwise90Degrees();
         }
+
+        // Frontier - Start: Enable filters at roundstart
+        private void OnMapInit(EntityUid uid, GasFilterComponent filter, MapInitEvent args) // Frontier - Init on map
+        {
+            if (filter.StartOnMapInit)
+            {
+                filter.Enabled = true;
+                DirtyUI(uid, filter);
+
+                UpdateAppearance(uid, filter);
+                _userInterfaceSystem.CloseUi(uid, GasFilterUiKey.Key);
+            }
+        }
+        // Frontier - End: Enable filters at roundstart
     }
 }

@@ -26,7 +26,7 @@ public sealed class TraitSystem : EntitySystem
     {
         // Check if player's job allows to apply traits
         if (args.JobId == null ||
-            !_prototypeManager.TryIndex<JobPrototype>(args.JobId ?? string.Empty, out var protoJob) ||
+            !_prototypeManager.Resolve<JobPrototype>(args.JobId, out var protoJob) ||
             !protoJob.ApplyTraits)
         {
             return;
@@ -36,7 +36,7 @@ public sealed class TraitSystem : EntitySystem
         {
             if (!_prototypeManager.TryIndex<TraitPrototype>(traitId, out var traitPrototype))
             {
-                Log.Warning($"No trait found with ID {traitId}!");
+                Log.Error($"No trait found with ID {traitId}!");
                 return;
             }
 
@@ -47,6 +47,11 @@ public sealed class TraitSystem : EntitySystem
             // Add all components required by the prototype
             EntityManager.AddComponents(args.Mob, traitPrototype.Components, false);
 
+            // Begin DeltaV - Add overridden components
+            if(traitPrototype.OverriddenComponents != null)
+                EntityManager.AddComponents(args.Mob, traitPrototype.OverriddenComponents, true);
+            // End DeltaV
+
             // Add item required by the trait
             if (traitPrototype.TraitGear == null)
                 continue;
@@ -55,7 +60,7 @@ public sealed class TraitSystem : EntitySystem
                 continue;
 
             var coords = Transform(args.Mob).Coordinates;
-            var inhandEntity = EntityManager.SpawnEntity(traitPrototype.TraitGear, coords);
+            var inhandEntity = Spawn(traitPrototype.TraitGear, coords);
             _sharedHandsSystem.TryPickup(args.Mob,
                 inhandEntity,
                 checkActionBlocker: false,
