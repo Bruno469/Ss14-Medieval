@@ -1,0 +1,52 @@
+- type: entity
+  abstract: true
+  id: DirtMaterialBase
+  parent: BaseItem
+  name: dirt
+  description: A pile of dirt.
+  components:
+  - type: FloorTile
+    placeTileSound:
+      collection: Dice
+      params:
+        variation: 0.03
+        volume: 2
+    outputs:
+      - FloorPlanetDirt
+  - type: Sprite
+    noRot: true
+    sprite: _Andromeda/Objects/Materials/dirt.rsi
+    layers:
+      - state: dirt
+        map: ["base"]
+  - type: Item
+    size: Normal
+  - type: Appearance
+  - type: Material
+  - type: PhysicalComposition
+    materialComposition:
+      Dirt: 10
+  - type: Stack
+    stackType: Dirt
+    count: 1
+    baseLayer: base
+    layerStates:
+    - dirt
+    - dirt_2
+    - dirt_3
+
+- type: entity
+  parent: DirtMaterialBase
+  id: DirtMaterial1
+  suffix: Single
+  components:
+  - type: Stack
+    count: 1
+
+- type: entity
+  parent: DirtMaterialBase
+  id: DirtMaterial10
+  suffix: 10
+  components:
+  - type: Stack
+    count: 10

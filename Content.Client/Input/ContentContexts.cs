@@ -1,4 +1,5 @@
 using Content.Shared.Input;
+using Content.Shared._Andromeda.Input;
 using Robust.Shared.Input;
 
 namespace Content.Client.Input
@@ -46,6 +47,10 @@ namespace Content.Client.Input
             common.AddFunction(ContentKeyFunctions.NanoChatNavigateUpUnread);
             common.AddFunction(ContentKeyFunctions.NanoChatNavigateDownUnread);
             // End DeltaV Additions
+
+            // Begin Andromeda Addition
+            common.AddFunction(AndromedaKeyFunctions.AndromedaActivateParry);
+            // End Andromeda Addition
 
             // Not in engine, because engine cannot check for sanbox/admin status before starting placement.
             common.AddFunction(ContentKeyFunctions.EditorCopyObject);

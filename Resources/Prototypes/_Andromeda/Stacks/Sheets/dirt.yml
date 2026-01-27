@@ -1,0 +1,7 @@
+- type: stack
+  parent: BaseSheetStack
+  id: Dirt
+  name: stack-dirt
+  icon: { sprite: _Andromeda/Objects/Materials/dirt.rsi, state: dirt }
+  spawn: DirtMaterial1
+

@@ -1,0 +1,177 @@
+<DefaultWindow xmlns="https://spacestation14.io"
+               xmlns:graphics="clr-namespace:Robust.Client.Graphics;assembly=Robust.Client"
+               xmlns:controls="clr-namespace:Content.Client.UserInterface.Controls"
+               xmlns:ui="clr-namespace:Content.Client.Materials.UI"
+               Title="{Loc 'smelter-ui-title'}"
+               SetSize="780 560"
+               MinSize="720 420">
+
+    <BoxContainer Orientation="Vertical"
+                  Margin="10"
+                  SeparationOverride="10"
+                  HorizontalExpand="True"
+                  VerticalExpand="True">
+
+        <!-- TOP: ITEM PREVIEW + REQUIREMENTS -->
+        <PanelContainer MinHeight="170"
+                        HorizontalExpand="True">
+            <PanelContainer.PanelOverride>
+                <graphics:StyleBoxFlat BackgroundColor="#1a1511"/>
+            </PanelContainer.PanelOverride>
+
+            <BoxContainer Orientation="Horizontal"
+                          Margin="6"
+                          HorizontalExpand="True"
+                          VerticalExpand="True"
+                          SeparationOverride="12">
+
+                <!-- ITEM PREVIEW -->
+                <PanelContainer HorizontalExpand="True"
+                                VerticalExpand="True">
+                    <PanelContainer.PanelOverride>
+                        <graphics:StyleBoxFlat BackgroundColor="#1a1511"/>
+                    </PanelContainer.PanelOverride>
+
+                    <BoxContainer Orientation="Horizontal"
+                                  Margin="12"
+                                  SeparationOverride="14"
+                                  HorizontalExpand="True"
+                                  VerticalAlignment="Center">
+
+                        <EntityPrototypeView Name="ItemView"
+                                             Scale="3,3"
+                                             MinSize="128 128"
+                                             MaxSize="128 128"
+                                             VerticalAlignment="Center"/>
+
+                        <BoxContainer Orientation="Vertical"
+                                      HorizontalExpand="True"
+                                      VerticalAlignment="Center"
+                                      SeparationOverride="6">
+
+                            <RichTextLabel Name="ItemName"/>
+                            <RichTextLabel Name="ItemDescription"
+                                        HorizontalExpand="True"
+                                        SizeFlagsStretchRatio="1"
+                                        MaxWidth="360"/>
+                        </BoxContainer>
+                    </BoxContainer>
+                </PanelContainer>
+
+                <!-- REQUIREMENTS -->
+                <PanelContainer MinWidth="260"
+                                VerticalExpand="True">
+                    <PanelContainer.PanelOverride>
+                        <graphics:StyleBoxFlat BackgroundColor="#1a1511"/>
+                    </PanelContainer.PanelOverride>
+
+                    <BoxContainer Orientation="Vertical"
+                                  Margin="10"
+                                  VerticalExpand="True"
+                                  SeparationOverride="6">
+
+                        <Label Text="{Loc 'smelter-requirements'}"/>
+
+                        <controls:HLine Color="#a65c2a"
+                                        Thickness="2"/>
+
+                        <RichTextLabel Name="FuelRequirement"
+                                       Margin="4 2"/>
+                    </BoxContainer>
+                </PanelContainer>
+
+            </BoxContainer>
+        </PanelContainer>
+
+        <!-- MIDDLE -->
+        <BoxContainer Orientation="Horizontal"
+                      HorizontalExpand="True"
+                      VerticalExpand="True"
+                      SeparationOverride="10">
+
+            <!-- RECIPES -->
+            <PanelContainer HorizontalExpand="True"
+                            VerticalExpand="True">
+                <PanelContainer.PanelOverride>
+                    <graphics:StyleBoxFlat BackgroundColor="#1a1511"/>
+                </PanelContainer.PanelOverride>
+
+                <BoxContainer Orientation="Vertical"
+                              Margin="10"
+                              VerticalExpand="True"
+                              SeparationOverride="6">
+
+                    <Label Text="{Loc 'smelter-recipe-list'}"/>
+
+                    <controls:HLine Color="#a65c2a"
+                                    Thickness="2"/>
+
+                    <ScrollContainer HorizontalExpand="True"
+                                     VerticalExpand="True"
+                                     HScrollEnabled="False">
+                        <BoxContainer Name="RecipesContainer"
+                                      Orientation="Vertical"
+                                      HorizontalExpand="True"
+                                      VerticalAlignment="Top"
+                                      SeparationOverride="6"/>
+                    </ScrollContainer>
+                </BoxContainer>
+            </PanelContainer>
+
+            <!-- SMELTER CONTENT -->
+            <PanelContainer MinWidth="220"
+                            VerticalExpand="True">
+                <PanelContainer.PanelOverride>
+                    <graphics:StyleBoxFlat BackgroundColor="#1a1511"/>
+                </PanelContainer.PanelOverride>
+
+                <BoxContainer Orientation="Vertical"
+                              Margin="10"
+                              VerticalExpand="True"
+                              SeparationOverride="6">
+
+                    <Label Text="{Loc 'smelter-available-ores'}"/>
+
+                    <controls:HLine Color="#a65c2a"
+                                    Thickness="2"/>
+
+                    <ScrollContainer VerticalExpand="True"
+                                     HScrollEnabled="False">
+                        <BoxContainer Name="SmelterContentContainer"
+                                      Orientation="Vertical"
+                                      SeparationOverride="6">
+                            <ui:MaterialStorageControl Name="MaterialsList" SizeFlagsStretchRatio="4"/>
+                        </BoxContainer>
+                    </ScrollContainer>
+                </BoxContainer>
+            </PanelContainer>
+
+        </BoxContainer>
+
+        <!-- BOTTOM -->
+        <PanelContainer MinHeight="70"
+                        HorizontalExpand="True">
+            <PanelContainer.PanelOverride>
+                <graphics:StyleBoxFlat BackgroundColor="#1a1511"/>
+            </PanelContainer.PanelOverride>
+
+            <BoxContainer Orientation="Horizontal"
+                          Margin="12"
+                          HorizontalExpand="True"
+                          VerticalAlignment="Center"
+                          SeparationOverride="10">
+
+                <RichTextLabel Name="CurrectSmeltFuelLabel"
+                               VerticalAlignment="Center"/>
+
+                <Control HorizontalExpand="True"/>
+
+                <Button Name="SmelterButton"
+                        Text="{Loc 'smelter-button'}"
+                        MinHeight="46"
+                        MinWidth="220"/>
+            </BoxContainer>
+        </PanelContainer>
+
+    </BoxContainer>
+</DefaultWindow>
